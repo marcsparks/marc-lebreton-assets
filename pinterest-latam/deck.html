@@ -154,6 +154,13 @@ tr.mark td{background:var(--accent-soft)}
 tr.markb td{background:var(--blue-soft)}
 
 /* ---------- misc bits ---------- */
+.badge{font-family:var(--mono); font-size:8.5px; letter-spacing:.13em; text-transform:uppercase; padding:2px 6px; border-radius:2px; border:1px solid var(--rule-2); color:var(--ink-3); white-space:nowrap; display:inline-block; line-height:1.5}
+.badge.gl{color:var(--ink-2); border-color:var(--rule-2)}
+.badge.la{color:var(--blue); border-color:var(--blue)}
+.badge.pp{color:var(--accent); border-color:var(--accent)}
+.badge.dv{color:var(--ochre); border-color:var(--ochre)}
+.badges{display:flex; flex-wrap:wrap; gap:5px; align-items:center; margin-top:2px}
+td .badge{margin-right:4px}
 .chips{display:flex; flex-wrap:wrap; gap:6px}
 .chip{font-family:var(--mono); font-size:10px; letter-spacing:.09em; text-transform:uppercase; border:1px solid var(--rule-2); color:var(--ink-2); padding:4px 8px; border-radius:99px; white-space:nowrap}
 .chip.a{border-color:var(--accent); color:var(--accent)}
@@ -240,7 +247,7 @@ ul.tight b{color:var(--ink)}
 <header class="rail">
   <div class="brand">Pinterest LATAM · <b>Content Growth</b></div>
   <div class="track"><span id="prog"></span></div>
-  <div class="count" id="count">01 / 56</div>
+  <div class="count" id="count">01 / 62</div>
   <button id="themeBtn" type="button" aria-label="Toggle colour theme">Theme</button>
   <button id="idxBtn" type="button">Index</button>
 </header>
@@ -273,7 +280,8 @@ ul.tight b{color:var(--ink)}
       <div class="card accent">
         <span class="tag">Beat 1</span>
         <h4>Supply is the constraint, not demand</h4>
-        <p>80 billion monthly searches, 96% unbranded, more than half commercially intended. The queries already exist in Portuguese and Spanish. The content doesn't.</p>
+        <p><b>80 billion monthly searches, 96% unbranded, more than half commercially intended</b> — Bill Ready's figure, and it is <b>global</b>. Pinterest publishes no LATAM search breakout, so I'd say that rather than imply one. What is observable per market is Pinterest Trends, live in Portuguese with two years of history — the queries are visible country by country. The content answering them isn't there.</p>
+        <div class="badges"><span class="badge pp">Pinterest-published</span><span class="badge gl">Global scope</span></div>
       </div>
       <div class="card accent">
         <span class="tag">Beat 2</span>
@@ -283,7 +291,7 @@ ul.tight b{color:var(--ink)}
       <div class="card accent">
         <span class="tag">Beat 3</span>
         <h4>The competitive answer isn't GMV, it's access</h4>
-        <p>Every rival pays per transaction. Pinterest's differentiator is that it is the only major platform where you don't need an audience to get distribution.</p>
+        <p>Named, not vague: <b>TikTok Shop Brazil</b> pays 10–30% on a 14-day first-click window. <b>Mercado Libre</b> pays up to 16% in Brazil, up to 24% in Mexico and Chile, <em>plus</em> payment for video views at its Creador tier. <b>Shopee</b> pays 3% on external social traffic. <b>Hotmart</b> pays 40–70% of net sale value. Pinterest pays nothing — so its differentiator has to be that it is the only major platform where <b>you don't need an audience to get distribution</b>.</p>
       </div>
       <div class="card accent">
         <span class="tag">Beat 4</span>
@@ -301,7 +309,7 @@ ul.tight b{color:var(--ink)}
 <section class="slide" data-part="Open" data-title="How this deck is built">
   <div class="wrap">
     <div class="eyebrow">Contents</div>
-    <h2 class="t">Eight parts, in the order the argument has to be made.</h2>
+    <h2 class="t">Nine parts, in the order the argument has to be made.</h2>
     <div class="g2">
       <div class="stack">
         <div class="step"><span class="no">01</span><div><h4>The LATAM content supplier space</h4><p>The monetization gap, Pinterest's real footprint per country, who these creators actually are, where they already earn, and the 2026 compliance shift.</p></div></div>
@@ -314,6 +322,7 @@ ul.tight b{color:var(--ink)}
         <div class="step"><span class="no">06</span><div><h4>First 90 days, then two years</h4><p>Nothing launches before it's instrumented; nothing scales before it's proven. Plus what deliberately does not happen.</p></div></div>
         <div class="step"><span class="no">07</span><div><h4>Pinterest vs other channels</h4><p>The honest advantages, the honest challenges, head-to-head economics, and the pitch arsenal by segment.</p></div></div>
         <div class="step"><span class="no">08</span><div><h4>Interview kit</h4><p>Org and people, product history, risks, questions to ask, ten lines to have ready, the facts that will get you caught, and the PT/ES versions.</p></div></div>
+        <div class="step"><span class="no">09</span><div><h4>Source register</h4><p>Every headline number in this deck, mapped to what it actually measures, who published it, when, at what scope, and how far you can push it in a room.</p></div></div>
       </div>
     </div>
     <div class="co edge">
@@ -542,7 +551,8 @@ ul.tight b{color:var(--ink)}
     <div class="g21">
       <div class="stack">
         <h3 class="t">How distribution actually behaves</h3>
-        <p class="srcnote">Tailwind 2025 benchmark study — ~17,000 accounts, 1.2M Pins.</p>
+        <p class="srcnote">Tailwind 2025 benchmark study — ~17,000 accounts, 1.2M Pins. <b>Read the method before you quote it:</b> Tailwind is a third-party scheduling tool, so the sample is accounts that <em>use a scheduler</em> — more deliberate than the average Pinterest account, and skewed to English-language markets. It is the best public dataset on Pin behaviour and it is not a Pinterest figure. Say "Tailwind's benchmark study of seventeen thousand accounts found…", never "Pinterest says…".</p>
+        <div class="badges"><span class="badge gl">Third party · global sample</span><span class="badge dv">Self-selected sample</span></div>
         <div class="stats">
           <div class="stat"><span class="n a">&gt;50%</span><span class="l">of all impressions and clicks come from the top 1% of Pins. The bottom 80% generate under 10%</span></div>
           <div class="stat"><span class="n">&gt;90%</span><span class="l">of outbound traffic comes from <b>original</b> Pins, not repins</span></div>
@@ -1589,7 +1599,7 @@ ul.tight b{color:var(--ink)}
         <h4>Brazil — depth, not acquisition</h4>
         <p>Biggest base, most infrastructure, most competition — and <b>19.8% penetration, the lowest of the major markets</b> despite being Pinterest's second-largest globally.</p>
         <p><b>Opportunity:</b> the Shopee precedent (the only affiliate T&amp;C anywhere that names Pinterest), the under-activated Nuvemshop integration, and Hotmart's 250k producers.</p>
-        <p><b class="ho">Challenge:</b> every competitor pays per transaction, and TikTok Shop did GMV ×102 in year one.</p>
+        <p><b class="ho">Challenge:</b> the four programmes a Brazilian creator will name back at you all pay per transaction — TikTok Shop (10–30%, GMV ×102 in year one), Shopee (3–15%, 5M+ affiliates), Mercado Livre (6–16%, +342% affiliate base in 2025) and Hotmart (40–70%). Pinterest pays none of them.</p>
       </div>
       <div class="card blue">
         <span class="tag">Priority 2 · Punch above the market size</span>
@@ -2512,6 +2522,211 @@ ul.tight b{color:var(--ink)}
       <div><span class="n">24 months</span><span class="l">A system, not a set of programmes — and the model being copied elsewhere</span></div>
     </div>
     <p class="meta">All figures current as of 5 August 2026 · Pinterest reported Q2 2026 on 4 August 2026<br>Items flagged in ochre could not be confirmed against a primary source and should be checked before being used as fact</p>
+  </div>
+</section>
+
+<!-- ============ PART 9 ============ -->
+<section class="slide" data-part="09 · Sources" data-title="How to read the register">
+  <div class="wrap">
+    <div class="eyebrow">09 · Source register</div>
+    <h2 class="t">Two rules that keep you out of trouble, and the tier system behind every number in this deck.</h2>
+    <div class="g2">
+      <div class="card accent">
+        <span class="tag">Rule 1 · Say the scope before you say the number</span>
+        <h4>Almost every impressive Pinterest statistic is global</h4>
+        <p>Pinterest reports revenue and users by three geographies — US &amp; Canada, Europe, Rest of World. <b>It does not break out LATAM in its financials at all</b>, and it publishes no LATAM search-volume figure. Every platform-behaviour statistic (searches, unbranded share, Gen Z share, gender split, save behaviour) is a global number.</p>
+        <p><b>So the discipline is:</b> "Globally, Pinterest runs eighty billion searches a month, ninety-six percent of them unbranded. There's no published LATAM breakout — but Pinterest Trends works per country in Portuguese, so the demand signal is observable market by market even though the aggregate isn't public."</p>
+        <p>That sentence is more impressive than the raw stat, because it demonstrates you know the difference.</p>
+      </div>
+      <div class="card blue">
+        <span class="tag">Rule 2 · Say what it measures before you say what it is</span>
+        <h4>Most conflicts in this deck are definitional, not factual</h4>
+        <p>Ad reach is not MAU. Creator counts depend entirely on the follower threshold. GMV share is not app usage. When two numbers disagree, it is almost always because they measure different things — and naming that is the sophisticated answer.</p>
+        <div class="split">
+          <h4>The four confidence tiers used throughout</h4>
+          <div class="kv">
+            <div><b>Tier A</b><span><b>Pinterest-published</b> — 10-K, earnings calls, newsroom, help docs, engineering papers. Quote freely and attribute to Pinterest.</span></div>
+            <div><b>Tier B</b><span><b>Named third party</b> — DataReportal, Nielsen, Influencity, YOUPIX, Squid, FGV, UBS BB, Sensor Tower, Tailwind. Quote <em>with the source named out loud</em>.</span></div>
+            <div><b>Tier C</b><span><b>Trade press or vendor</b> — single-outlet reporting, vendor marketing. Say "reported", not "is".</span></div>
+            <div><b>Tier D</b><span><b>Derived or unverified</b> — arithmetic, estimates, or claims with no primary source. Label them as such, or don't use them.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="co line">
+      <span class="lab">If you are asked directly where a number comes from</span>
+      <q>That one's Bill Ready's, from the earnings calls — it's a global figure, and Pinterest doesn't publish a LATAM breakout. The LATAM numbers I'm working from are the Rest-of-World segment in the Q2 filing, DataReportal's per-country ad reach, and Pinterest's own regional statements — and those three disagree with each other for methodological reasons I'm happy to walk through.</q>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-part="09 · Sources" data-title="Pinterest company figures">
+  <div class="wrap">
+    <div class="eyebrow">09 · Source register</div>
+    <h2 class="t">Pinterest company and platform figures.</h2>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Figure used</th><th>What it actually measures</th><th>Source &amp; date</th><th>Scope</th><th>Tier</th></tr></thead>
+        <tbody>
+          <tr><td class="k">$1,180M revenue, +18%, 640M MAU, $1.86 ARPU</td><td>Consolidated Q2 results</td><td>Pinterest Q2 2026 results, reported 4 Aug 2026</td><td><span class="badge gl">Global</span></td><td><span class="badge pp">A</span></td></tr>
+          <tr class="mark"><td class="k">377M MAU · $87M revenue · $0.23 ARPU · 7.4% of revenue</td><td><b>The "Rest of World" reporting segment</b> — not LATAM. It includes APAC, Africa and the Middle East as well</td><td>Q2 2026 results; the 7.4% is <b>my arithmetic</b> ($87M ÷ $1,180M)</td><td><span class="badge gl">Rest of World</span></td><td><span class="badge pp">A</span> <span class="badge dv">D on the %</span></td></tr>
+          <tr><td class="k">"36× below US &amp; Canada"</td><td>$8.30 ÷ $0.23</td><td>My arithmetic from the segment table</td><td><span class="badge gl">Derived</span></td><td><span class="badge dv">D</span></td></tr>
+          <tr><td class="k">80B monthly searches · 96% unbranded · &gt;half commercial</td><td>Total platform search volume and its composition</td><td>Bill Ready, repeated across earnings calls and public remarks</td><td><span class="badge gl">Global — no LATAM breakout exists</span></td><td><span class="badge pp">A</span></td></tr>
+          <tr><td class="k">~two-thirds of interactions are search</td><td>Share of platform interaction that is search-initiated</td><td>Pinterest public statements</td><td><span class="badge gl">Global</span></td><td><span class="badge pp">A</span></td></tr>
+          <tr><td class="k">1.7B outbound clicks/month; "5×'d clicks in three years"</td><td>Referral traffic sent to advertisers</td><td>Bill Ready, Q1 2026 call</td><td><span class="badge gl">Global</span></td><td><span class="badge pp">A</span></td></tr>
+          <tr><td class="k">"Substantially all revenue from third-party advertising"</td><td>Revenue recognition policy — one operating segment, no commerce take-rate</td><td>FY2025 10-K</td><td><span class="badge gl">Global</span></td><td><span class="badge pp">A</span></td></tr>
+          <tr><td class="k">Gen Z &gt;half of MAU; searches +30% YoY; 2.5× saves; 72% of Collage creators</td><td>Cohort behaviour</td><td>Bill Ready / Pinterest newsroom</td><td><span class="badge gl">Global</span></td><td><span class="badge pp">A</span></td></tr>
+          <tr><td class="k">~70% female (defensible male range 22–30%)</td><td>Self-declared gender. Pinterest markets "more than a third male", which likely includes <em>inferred</em> gender</td><td>Pinterest + DataReportal; the 22–30% range is a reconciliation, not a published figure</td><td><span class="badge gl">Global</span></td><td><span class="badge pp">A</span> <span class="badge dv">D on the range</span></td></tr>
+          <tr><td class="k">Direct links: +88% outbound CTR, −39% CPC</td><td>Product launch results</td><td>Pinterest, 2023</td><td><span class="badge gl">Global</span></td><td><span class="badge pp">A</span></td></tr>
+          <tr><td class="k">Performance+ ~30% of lower-funnel revenue; adopters +2× spend growth</td><td>Ad product adoption</td><td>Pinterest earnings commentary</td><td><span class="badge gl">Global</span></td><td><span class="badge pp">A</span></td></tr>
+          <tr><td class="k">16,000 user actions over 2 years; homefeed 160×</td><td>Model context window for personalisation</td><td>Bill Ready, Q1 2026 call, verbatim</td><td><span class="badge gl">Global</span></td><td><span class="badge pp">A</span></td></tr>
+          <tr><td class="k">Pinterest Assistant: +25pp commercial intent</td><td>Intent lift vs traditional search</td><td>Pinterest, Oct 2025</td><td><span class="badge gl">Global</span></td><td><span class="badge pp">A</span></td></tr>
+          <tr><td class="k">Predicts: 80% accuracy, ~500k searches → ~30 trends, +21% trend longevity</td><td>Pinterest's own methodology claim and self-scored accuracy</td><td>Pinterest Predicts methodology page</td><td><span class="badge gl">Global</span></td><td><span class="badge pp">A</span> — <b>but self-scored</b></td></tr>
+          <tr><td class="k">~15% cut / ~700 roles, completion 30 Sep 2026, ~$100M savings</td><td>Restructuring announcement</td><td>Company announcement 27 Jan 2026; CNBC</td><td><span class="badge gl">Global</span></td><td><span class="badge pp">A</span></td></tr>
+          <tr><td class="k">Impressions +41%, pricing −19%</td><td>Ad supply vs price dynamics</td><td>Pinterest earnings commentary</td><td><span class="badge gl">Global</span></td><td><span class="badge pp">A</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-part="09 · Sources" data-title="LATAM footprint — three numbers">
+  <div class="wrap">
+    <div class="eyebrow">09 · Source register</div>
+    <h2 class="t">Every LATAM market has three different audience numbers. Know which one you're quoting.</h2>
+    <p class="lede">This is the single most likely place to get caught, because all three are legitimate and they disagree.</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Market</th><th class="num">DataReportal ad reach <small>Oct 2025 · Tier B</small></th><th class="num">Pinterest's own statement <small>Tier A</small></th><th class="num">"Top markets" ranking figure <small>Tier C</small></th><th>Why they differ</th></tr></thead>
+        <tbody>
+          <tr><td class="k">Brazil</td><td class="num">42.2M</td><td class="num">40M+ MAU, "~30% of the connected population"</td><td class="num">~40M — 2nd largest market globally</td><td>Pinterest says ~30% of connected population; DataReportal computes 22.8% of internet users. <b>Different denominators.</b></td></tr>
+          <tr><td class="k">Mexico</td><td class="num">28.5M</td><td class="num">21M+ monthly (Sept 2025)</td><td class="num">26.7M — 3rd largest</td><td>A 7.5M spread on one market. Ad reach counts addressable audience in the ads tool; "21M+ monthly" is a conservative MAU statement.</td></tr>
+          <tr><td class="k">Argentina</td><td class="num">11.9M</td><td class="num">13M+, 35% of the online population</td><td class="num">7th largest</td><td>Pinterest's figure is <em>higher</em> here — the reverse of Mexico.</td></tr>
+          <tr><td class="k">Colombia</td><td class="num">10.9M</td><td class="num">12M+, 43% of the online population</td><td class="num">10th largest</td><td>Same direction as Argentina.</td></tr>
+          <tr><td class="k">Chile</td><td class="num">5.36M</td><td class="num">4M+</td><td class="num">—</td><td>Ad reach higher again.</td></tr>
+          <tr><td class="k">Peru</td><td class="num ho">Not published</td><td class="num">—</td><td class="num">—</td><td>Served by Aleph as reseller rather than the direct ads API, so DataReportal has no figure to pull.</td></tr>
+          <tr class="mark"><td class="k">LATAM total</td><td class="num">~98.9M <small>sum of the five published markets</small></td><td class="num hi">80M <small>Pinterest's own stated regional total</small></td><td class="num ho">~110M <small>the estimate in circulation</small></td><td><b>Three answers, 30M apart.</b> See below.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="g2">
+      <div class="card ochre">
+        <span class="tag">⚠ The correction I'd make to my own earlier framing</span>
+        <h4>"~110M LATAM MAU" is a derived estimate, and it does not reconcile</h4>
+        <p>It comes from ~55M Brazil + ~55M Spanish-speaking. But <b>Brazil's own figures are 40–42M, not 55M</b>, and Pinterest's stated LATAM total is <b>80M</b>. Summing the five published ad-reach figures gives <b>~99M</b>. So 110M is the least defensible of the three.</p>
+        <p><b class="ho">Do not lead with 110M.</b> If you need one number, use Pinterest's own 80M and say it's Pinterest's own. If you want the range, give the range and the method — that is the stronger move.</p>
+      </div>
+      <div class="co line">
+        <span class="lab">The safe formulation</span>
+        <q>Pinterest's own stated LATAM audience is eighty million. If you sum DataReportal's per-country ad reach across the five markets it publishes, you get closer to a hundred million — but that's ad reach, not monthly actives, and it excludes Peru entirely because Peru is reseller-served. I'd work from the eighty and treat the gap as a measurement question rather than a growth claim.</q>
+      </div>
+    </div>
+    <p class="srcnote"><b>Also worth knowing:</b> "LATAM revenue grew 59% in Q1 2026" is a Pinterest regional statement (Tier A), not a segment disclosure — LATAM is not a reporting segment, so it cannot be reconciled to the financials. Quote it as a company statement. And DataReportal figures are <b>October 2025 data published in the Digital 2026 reports</b> — roughly ten months old at interview date. Say "as of late 2025".</p>
+  </div>
+</section>
+
+<section class="slide" data-part="09 · Sources" data-title="Per-transaction programmes">
+  <div class="wrap">
+    <div class="eyebrow">09 · Source register</div>
+    <h2 class="t">"Every rival pays per transaction" — the named, dated, specified version.</h2>
+    <p class="lede">Never say the vague version. This is the evidence, and it is strong enough that you should quote it rather than summarise it.</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Programme</th><th>Launched</th><th class="num">Rate</th><th class="num">Attribution</th><th>Follower gate</th><th>Named proof</th></tr></thead>
+        <tbody>
+          <tr><td class="k">TikTok Shop Brazil</td><td>5 May 2025</td><td class="num">10–30%, seller-set</td><td class="num hi">14-day first-click <small>unusually creator-favourable</small></td><td>~1,000 (lowered)</td><td>Ve Merlos R$2.8M cumulative GMV, R$2.4M from 200+ lives, one broadcast &gt;R$400k · Lua Blossom &gt;R$1M · Moderna ~60% of company sales, 9,000+ affiliates · year one: daily GMV ×102, affiliates ×46, live GMV ×161</td></tr>
+          <tr><td class="k">TikTok Shop Mexico</td><td>6 Feb 2025 <small>before Brazil</small></td><td class="num">10–30%</td><td class="num">—</td><td>1,000, 18+</td><td>Ditha Alcocer (live shopping became household's primary income) · Monse Meraz · Meif Espinosa · STF Tech: 85% of sales from affiliate creators, GMV +400% · Beauty Creations: &gt;1M pesos in lives in one day with 500 creators · Wilson Productions: 1,200 units in one live · year one GMV ×59</td></tr>
+          <tr class="markb"><td class="k">Mercado Libre</td><td>BR 2023 · MX late 2023 · <b>CL May 2025</b> · <b>AR Mar 2026</b></td><td class="num">up to 16% BR<br>up to 24% MX/CL<br><small>16% beauty/fashion, 8% home/toys, 4% electronics — <b>and it pays on indirect sales</b></small></td><td class="num">~7d</td><td>Afiliado: none, 18+<br><b>Creador: 10,000</b></td><td><b>6M registered affiliates LATAM-wide.</b> Creador tier earns commission <b>plus payment for video views</b> — up to CLP 540,000 in Chile. Base +342% in 2025; orders 72 → 88 → 168/min by Q1 2026. Flew 30 LATAM creators to Cannes Lions 2026 (17 Brazilian, incl. Thaynara OG, Thaís Carla); the July 2025 "10+9" campaign activated 2,000+ nano and micro creators simultaneously</td></tr>
+          <tr><td class="k">Shopee Brazil</td><td>—</td><td class="num">3–15% · <b class="hi">Video cut 3% → 1.5% on 1 Jul 2026 while external social stayed at 3%</b> · Live 5%</td><td class="num">~7d</td><td>None — CPF only</td><td><b>5M+ registered affiliates</b>, orders +200% YoY (Apr 2026). Its affiliate T&amp;C clause 2.3(a) explicitly names Pinterest; 2.3(b) permits Pinterest Ads while banning Google and Bing</td></tr>
+          <tr><td class="k">Amazon Mexico Influencer Program</td><td>Dec 2025 <small>presented CDMX Feb 2026</small></td><td class="num">up to 10% + MX$36–60 bounties per Prime/Audible/Music signup</td><td class="num">—</td><td>Review-based</td><td>~378,000 registered content creators. "Tu Tienda Amazon" storefront, and <b>auto-generated monthly commission invoices</b> — a real friction-remover under Mexico's RFC regime</td></tr>
+          <tr><td class="k">Amazon Brasil Associados</td><td>—</td><td class="num">13% beauty/baby/health/food · 11% clothing/pet · 8% electronics/home/sports · 7% footwear/jewellery/watches</td><td class="num ho">24h — the shortest of any major programme here</td><td>Associates open; Influencer Program review-based</td><td>amazon.com.br/shop/&lt;handle&gt; storefronts</td></tr>
+          <tr><td class="k">YouTube Shopping Affiliate</td><td>BR 4 Nov 2025 · <b>MX + AR 18 Jun 2026</b></td><td class="num">Retailer-set</td><td class="num ho">Payout 60–120 days after purchase, via AdSense — the slowest here</td><td>5,000 subs BR<br>500 subs MX/AR</td><td>Launch retail partners Mercado Livre and Shopee in Brazil; <b>Mercado Libre exclusive in Mexico and Argentina</b>. Not in Colombia, Chile or Peru</td></tr>
+          <tr><td class="k">Hotmart / Kiwify / Eduzz</td><td>Long-running</td><td class="num hi">40–70% of net sale value <small>range 30–80%</small></td><td class="num hb">60–180 days — the longest windows in the market</td><td>None</td><td>Hotmart: 250k+ active producers, &gt;US$10bn cumulative GMV, 8.7M LATAM buyers. Kiwify: 25M buyers, 29k active creators</td></tr>
+          <tr><td class="k">Falabella "Creators F"</td><td>Aug 2025 · <b>Chile only</b></td><td class="num">6–15%</td><td class="num ho">48 hours</td><td><b>None</b></td><td>The only <b>retailer-native</b> creator programme in Hispanic LATAM. Max 30 active links, CLP 25,000 payout floor</td></tr>
+          <tr><td class="k">Temu Mexico</td><td>—</td><td class="num">up to 30% + MX$70/download referral + MX$500/affiliate invitation</td><td class="num">30-day cookie</td><td>None</td><td>Uniform global terms across 80+ countries</td></tr>
+          <tr><td class="k">Shein</td><td>—</td><td class="num">10–20%</td><td class="num">30d</td><td>Audience review</td><td>113M app MAU in Brazil — third on mobile, ahead of Amazon</td></tr>
+          <tr><td class="k">Magalu</td><td>—</td><td class="num">up to 12%</td><td class="num">—</td><td>Very low</td><td>WhatsApp social sellers rather than Instagram creators. Magalu's own audience is shrinking, −9% MAU YoY</td></tr>
+          <tr class="mark"><td class="k">Pinterest</td><td>—</td><td class="num hi">Nothing. No commission, no rev-share, no tipping, no subscriptions, no creator fund since Creator Rewards closed Nov 2022</td><td class="num">n/a</td><td>None</td><td>Pinterest's own words: <em>"Pinterest does not facilitate payment for monetization programs like product tagging, affiliate links or brand partnerships."</em> Only Amazon storefront linking (10 Jun 2026) applies affiliate attribution automatically — over <b>Amazon's</b> commission economics, not Pinterest's</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="co verify">
+      <span class="lab">The counter-examples that make you credible — volunteer them before you're challenged</span>
+      <div>"Every rival pays" is <b>not</b> literally true, and saying so unprompted is worth more than the claim itself. <b>Coppel Mexico</b> runs an ambassador model — welcome kit, ring light, an official ID permitting filming inside stores — with <b>no commission structure at all</b>. <b>Liverpool, El Palacio de Hierro, Elektra, Grupo Éxito and Ripley</b> have no public creator affiliate programme. <b>Rappi</b> runs referral codes and promo campaigns, not a standing rate card ("referidos" recruits couriers, not creators). <b>Falabella Colombia's "f.partners" is seller consulting, not a creator programme</b> — an easy error to make from the name. And fintech referral schemes (Nu México, Ualá, Nequi, Mercado Pago) are user-to-user, not creator commission. <b>The precise claim is: every major <em>commerce</em> platform in LATAM runs a native first-party per-transaction creator programme with a published rate card, an attribution window and a payout schedule. Pinterest runs none. Several <em>retailers</em> don't either.</b></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-part="09 · Sources" data-title="Creator-economy figures">
+  <div class="wrap">
+    <div class="eyebrow">09 · Source register</div>
+    <h2 class="t">Creator-economy and market figures.</h2>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Figure used</th><th>What it actually measures</th><th>Source, method &amp; date</th><th>Tier</th></tr></thead>
+        <tbody>
+          <tr><td class="k">78% ≤50k followers · 40% &lt;10k · 18% earn exclusively · 1.2% clear R$15k/mo · 74.7% women</td><td>Brazilian creator census</td><td><b>Squid</b> creator census, n=4,500, self-reported survey</td><td><span class="badge la">B</span></td></tr>
+          <tr><td class="k">40%+ earn ≤R$2,000/mo · 12% &gt;R$10k · 30% unmonetised · 53% depend on other work · earnings peak years 3–6 · 49.8% Black/Afro-Brazilian · 74.8% experienced hate speech</td><td>Brazilian creator income and demographics</td><td><b>YOUPIX "Creators &amp; Negócios"</b>, 6th edition, Nov 2025</td><td><span class="badge la">B</span></td></tr>
+          <tr><td class="k">PJ R$10,115 vs individual R$5,078/mo · only 4% rely on brand sponsorships</td><td>Income by legal structure; income-source mix</td><td><b>FGV ECMI × Hotmart</b>, n=552. <span class="ho">Vendor-commissioned</span> — treat directionally and say so</td><td><span class="badge dv">B/C</span></td></tr>
+          <tr><td class="k">R$11,959 average monthly income</td><td>Creators whose <em>digital sales are their primary income</em> — a narrow, self-selected subset</td><td>FGV × Hotmart. <b>Small sample, vendor-commissioned.</b> Directional only</td><td><span class="badge dv">C</span></td></tr>
+          <tr><td class="k">Brazil 14.43M · AR 1.7M · MX 670k · CO 640k · CL 607k · PE 170k · LATAM 18.9M</td><td><b>Instagram accounts ≥1,000 followers, 18+, public, 2023 data.</b> Measures Instagram penetration more than creator-economy size</td><td><b>Influencity</b>, "The Largest Influencer Study in Latin America" — the only source measuring every country identically</td><td><span class="badge la">B</span></td></tr>
+          <tr><td class="k">Brazil 500,000</td><td>Profiles ≥10,000 followers. <b>The most defensible single Brazil number</b></td><td><b>Nielsen</b></td><td><span class="badge la">B</span></td></tr>
+          <tr><td class="k">Brazil 3.8M creators</td><td>No published threshold, platform or year</td><td>Reglab / vendor estimate, Nov 2025. <span class="ho">Use only with the spread stated</span></td><td><span class="badge dv">C</span></td></tr>
+          <tr class="mark"><td class="k">"Mexico 207,000 creators, +21% YoY"</td><td><b class="hi">Spain's number.</b> IAB Spain's Estudio Anual de Influencer Marketing 2025, researched by Autoritas: 207,000 active creator profiles <em>in Spain</em>, &gt;10k followers, Instagram + TikTok only, 2024 data</td><td>Syndicated into Mexican trade press May 2025. Every fingerprint matches Spain's study. <b class="hi">Do not use.</b></td><td><span class="badge dv">Wrong</span></td></tr>
+          <tr><td class="k">Peru 1.5–1.7M</td><td><b>Aspirants</b> — people earning from social <em>or who want to</em>. 69% don't monetise; ~11% full-time</td><td>CoCreators via Gestión / Infobae</td><td><span class="badge dv">C</span></td></tr>
+          <tr><td class="k">Chile 31,595 monitored / 9,752 filed / 471 audited / 76.1% compliance</td><td>Creators the <b>tax authority</b> monitors using contracted social-monitoring software. The only administrative count in LATAM</td><td><b>Chile SII</b>, 2025 tax season, up 86% from 17,000</td><td><span class="badge la">B</span></td></tr>
+          <tr><td class="k">66% of LatAm consumers name influencers as biggest purchase influence · 33% social commerce penetration</td><td>Consumer survey</td><td><b>DoubleVerify</b> 2025 Global Insights</td><td><span class="badge la">B</span></td></tr>
+          <tr><td class="k">69% bought an influencer-recommended product in 6 months · 70% find everyday photos more credible · 64% value stated drawbacks</td><td>Brazilian consumer survey</td><td><b>Influency.me × Opinion Box</b>, "Consumo e Influência Digital 2026", May 2026, n=1,201</td><td><span class="badge la">B</span></td></tr>
+          <tr><td class="k">57% of advertisers increasing influencer spend · 12% spend &gt;R$5M/yr · YouTube share 29%→37% · 48% struggle to prove effectiveness</td><td>Brazilian advertiser survey, <b>n=187 — small</b></td><td><b>YOUPIX "ROI &amp; Influência"</b> with Nielsen, 8th ed. 2025</td><td><span class="badge la">B</span></td></tr>
+          <tr><td class="k">BR e-commerce GMV share: ML 42% / Shopee 19% / Amazon 11% / TikTok Shop ~1.6%</td><td>GMV share, not users</td><td><b>UBS BB</b>, Mar 2026, via Money Times</td><td><span class="badge la">B</span></td></tr>
+          <tr><td class="k">App MAU: ML 134.0M · Shopee 130.2M · Shein 113.1M · Amazon 61.5M</td><td>Mobile app monthly actives — a different metric from GMV share</td><td><b>Sensor Tower</b> via BTG, Q2 2026</td><td><span class="badge la">B</span></td></tr>
+          <tr><td class="k">Publicis acquired BR Media Group ~R$550M (~8× EBITDA)</td><td>M&amp;A transaction</td><td>Exame and Brazilian trade press, Feb 2025</td><td><span class="badge la">C</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-part="09 · Sources" data-title="Mechanism + open items">
+  <div class="wrap">
+    <div class="eyebrow">09 · Source register</div>
+    <h2 class="t">Mechanism figures, and the eight things I could not verify.</h2>
+    <div class="g2">
+      <div class="stack">
+        <div class="card blue">
+          <span class="tag">Mechanism — all Tier A, all from Pinterest's own research</span>
+          <h4>These are the strongest citations in the deck</h4>
+          <div class="kv">
+            <div><b>Board titles +17% / +8% / +13%</b><span><b>OmniSearchSage</b> (arXiv), ablation table. Note it is an <em>offline</em> evaluation of incremental feature contribution, not a live A/B result — say "in Pinterest's own ablation study".</span></div>
+            <div><b>Five relevance inputs</b><span>Pinterest engineering blog on search relevance: Pin title/description, BLIP synthetic captions, top engaged queries over 2 years, board titles, linked page title/description. Pinterest states the limitation itself.</span></div>
+            <div><b>Saves as objective</b><span>TransActV2 +6.35% repins · OmniSage +2.5% sitewide repins · PinRec +4% search saves · hides −12.8%. All Pinterest papers.</span></div>
+            <div><b>Alt text = accessibility only</b><span>Pinterest help doc, verbatim. Pin2Interest indexes <em>link</em> alt text — a different field.</span></div>
+            <div><b>"Create original content weekly"</b><span>The only cadence number Pinterest publishes. Everything else in circulation is unsourced.</span></div>
+            <div><b>RSS 200/day · CSV 200/submission · scheduler 10/30 days</b><span>Pinterest help docs, verbatim.</span></div>
+            <div><b>Top 1% of Pins &gt;50% of impressions · 68 vs 44 saves · &gt;60% of saves from Pins &gt;1yr</b><span class="ho"><b>Tailwind</b>, not Pinterest — ~17,000 accounts of a third-party scheduler, self-selected and English-skewed. Attribute it explicitly.</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="stack">
+        <div class="card ochre">
+          <span class="tag">The open items — say "I don't know yet, and here's how I'd find out"</span>
+          <div class="steps">
+            <div class="step"><span class="no">01</span><div><h4>Are video Pins available in Brazil?</h4><p>Pinterest's availability page is blocked to automated fetch. Later's help centre lists only US, CA, UK, IE, AU, NZ. <b>Check on a Brazilian account in a browser.</b></p></div></div>
+            <div class="step"><span class="no">02</span><div><h4>Does Amazon storefront linking cover amazon.com.br and .com.mx?</h4><p>Country scope was never disclosed in the newsroom post or any coverage.</p></div></div>
+            <div class="step"><span class="no">03</span><div><h4>Does Mercado Libre permit Pinterest as an affiliate channel?</h4><p>T&amp;C behind a login. Also unconfirmed whether the programme is live in Colombia and Peru at all.</p></div></div>
+            <div class="step"><span class="no">04</span><div><h4>Did LATAM keep its Inclusion Fund slot in 2026?</h4><p>Sources conflict — one says ten countries including Brazil and Mexico, another says the sixth edition was US-only.</p></div></div>
+            <div class="step"><span class="no">05</span><div><h4>Is the #paid Creator Partnership Program available in LATAM?</h4><p>No Pinterest-owned page describes the programme at all; it exists publicly only via #paid's press release. No other execution partners are named anywhere.</p></div></div>
+            <div class="step"><span class="no">06</span><div><h4>Paid-partnership tool country availability today</h4><p>Six LATAM markets were in the ~19 original 2021 launch markets, but Pinterest publishes no current authoritative list.</p></div></div>
+            <div class="step"><span class="no">07</span><div><h4>Mexico leadership</h4><p>Efraín Mendicuti was appointed Director for Mexico and Spanish-speaking LATAM in Nov 2024; Mar 2026 reporting suggested the team was being rebuilt after his departure. Unresolved.</p></div></div>
+            <div class="step"><span class="no">08</span><div><h4>Argentina creator count</h4><p>HypeAuditor × IAB Argentina 2025 exists but the figures are gated. A genuine gap — name it rather than estimate.</p></div></div>
+          </div>
+        </div>
+        <div class="co line">
+          <span class="lab">Why volunteering this list is an asset, not a weakness</span>
+          <q>There are about eight things I'd need to confirm in week one that I couldn't establish from outside — starting with whether video Pins are even available to Brazilian creators, because if they aren't, that reshapes the creative curriculum entirely. I'd rather show you the list than pretend I have a complete picture.</q>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
