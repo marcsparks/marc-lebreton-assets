@@ -1,0 +1,75 @@
+<title>Pecém Email</title>
+
+<style>
+  :root{
+    --bg:#EDEAE6; --chrome:#5C5852; --rule:#D2CCC4;
+    --sheet:#FFFFFF; --ink:#202020; --link:#1155CC;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#191817; --chrome:#9A948C; --rule:#332F2B; }
+  }
+  :root[data-theme="dark"]{ --bg:#191817; --chrome:#9A948C; --rule:#332F2B; }
+  :root[data-theme="light"]{ --bg:#EDEAE6; --chrome:#5C5852; --rule:#D2CCC4; }
+
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg);
+    font-family:Arial, Helvetica, sans-serif;
+    padding:0 16px 64px;
+  }
+
+  /* Instructions bar — excluded from Select All so it never lands in Gmail */
+  .howto{
+    -webkit-user-select:none; user-select:none;
+    max-width:660px; margin:0 auto; padding:22px 4px 14px;
+    color:var(--chrome); font-size:12.5px; line-height:1.6;
+    letter-spacing:.02em; border-bottom:1px solid var(--rule);
+  }
+  .howto b{color:var(--chrome); letter-spacing:.08em; text-transform:uppercase; font-size:10.5px}
+  .howto kbd{
+    font-family:ui-monospace, Menlo, Consolas, monospace; font-size:11px;
+    border:1px solid var(--rule); border-radius:3px; padding:1px 5px; color:var(--chrome);
+  }
+
+  /* The email itself — fixed light "paper" so it matches how Gmail will render it */
+  .sheet{
+    max-width:660px; margin:20px auto 0; background:var(--sheet); color:var(--ink);
+    padding:38px 42px 44px; border-radius:2px;
+    box-shadow:0 1px 2px rgba(0,0,0,.06), 0 10px 30px -14px rgba(0,0,0,.28);
+  }
+  .sheet p{ margin:0 0 14px; font-size:14px; line-height:1.55; }
+  .sheet p:last-child{ margin-bottom:0 }
+  .sheet a{ color:var(--link); }
+  @media (max-width:560px){ .sheet{ padding:26px 22px 30px } }
+</style>
+
+<div class="howto">
+  <b>How to use</b><br>
+  Click anywhere below, press <kbd>Ctrl/Cmd + A</kbd> then <kbd>Ctrl/Cmd + C</kbd>, and paste straight into Gmail.
+  Links and paragraph breaks carry over; this instruction block does not.
+  In Gmail, paste with <kbd>Ctrl/Cmd + Shift + V</kbd> if you want it to inherit Gmail's own font.
+</div>
+
+<div class="sheet">
+  <p>Ben —</p>
+
+  <p>Great to hear from you, and glad it's fun. Not surprised, if Mike's got the gang back together.</p>
+
+  <p>I'm in Ceará at the moment, right next to <a href="https://www.bloomberglinea.com.br/tech/dona-do-tiktok-escolhe-o-brasil-para-seu-maior-complexo-de-data-centers-fora-da-china/">ByteDance's build at Pecém</a> — R$150bn, 1.5GW, live 2027, the largest complex they've put anywhere outside China. What strikes you standing here is how much room is left: <a href="https://diariodonordeste.verdesmares.com.br/negocios/por-que-o-ceara-se-tornou-um-dos-principais-destinos-para-data-centers-das-big-techs-1.3710490">nine projects are already approved</a> across the port complex, roughly R$558bn in total, and it isn't close to full.</p>
+
+  <p>The national picture is the same shape. <a href="https://datacentremagazine.com/data-centres/scala-data-centers-ai-city-secures-5-gw-approval-in-brazil">Scala has 4.75GW authorised</a> for its AI City campus in Rio Grande do Sul, a ~US$50bn build, and about R$500bn has been announced country-wide. <a href="https://www.telecomreviewamericas.com/articles/reports-and-coverage/brazil-eyes-global-ai-leadership-with-usd-698-billion-data-center-opportunity/">FGV Projetos sizes the headroom</a> at <b>+12.7GW by 2035</b> — from roughly 1GW today to 13.7 — worth <b>US$432–698bn</b>, though worth knowing Scala commissioned that one.</p>
+
+  <p>Three things make Ceará work specifically:</p>
+
+  <p><b>Power.</b> Casa dos Ventos is supplying ByteDance <a href="https://www.abrazpe.org.br/index.php/2026/06/02/projeto-bilionario-no-pecem-une-casa-dos-ventos-bytedance-e-ambiente-estrategico-da-zpe-ceara/">100% renewable from new wind</a> in Ceará and Piauí — 2.1GW installed. Brazil's grid is <a href="https://exame.com/esg/na-corrida-da-ia-empresas-aceleram-para-transformar-brasil-em-hub-de-data-centers-verdes/">close to 90% renewable</a> overall.</p>
+
+  <p><b>Connectivity.</b> <a href="https://www.ccbc.org.br/publicacoes/artigos-ccbc/infraestrutura-digital-e-energia-por-que-o-ceara-entrou-no-radar-global-de-investimentos-em-data-centers/">16 submarine cables land in Ceará</a> with another in build, giving direct routes to North America, Europe and Africa. That's the real reason Pecém won, not just the wind.</p>
+
+  <p><b>Tax.</b> Data centres inside ZPE Ceará already get a special tariff regime, conditioned on running exclusively renewable. On top of that, <a href="https://www.datacenterdynamics.com/br/not%C3%ADcias/entidades-fazem-press%C3%A3o-no-senado-por-vota%C3%A7%C3%A3o-do-redata/">REDATA</a> — a five-year federal tax suspension on equipment — passed the Chamber in February and is in front of the Senate now. I've been following the vote.</p>
+
+  <p>I mentioned it because I saw CoreWeave has started expanding internationally — Europe, and now Indonesia. From where I'm sitting, Brazil looks like it belongs on that list, and the window while REDATA is still being decided is probably the interesting one.</p>
+
+  <p>Forward it on if it's useful to whoever's looking at the region.</p>
+
+  <p>Marc</p>
+</div>
