@@ -1,0 +1,1007 @@
+<title>Circle LATAM Brief</title>
+
+<style>
+:root{
+  --bg:#F1F4F3; --surface:#FFFFFF; --sunken:#F8FAF9; --rule:#D6DEDB; --rule2:#BDC8C4;
+  --ink:#12181A; --ink2:#4B5A57; --ink3:#7E8D89;
+  --grn:#0E7A52; --grn-s:#E2F2EB; --blu:#2A5CC8; --blu-s:#E7ECFA; --och:#9A6410; --och-s:#F7EEDD;
+  --mono:ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "DejaVu Sans Mono", monospace;
+  --sans:system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --pad:clamp(18px,4vw,64px); --maxw:1200px;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#0E1416; --surface:#161D1F; --sunken:#121819; --rule:#25302F; --rule2:#35423F;
+  --ink:#E7EEEB; --ink2:#A3B2AE; --ink3:#74837F;
+  --grn:#3ECF8E; --grn-s:#0D2A20; --blu:#7C9CFF; --blu-s:#152040; --och:#D9A24E; --och-s:#2E230F;
+}}
+:root[data-theme="dark"]{
+  --bg:#0E1416; --surface:#161D1F; --sunken:#121819; --rule:#25302F; --rule2:#35423F;
+  --ink:#E7EEEB; --ink2:#A3B2AE; --ink3:#74837F;
+  --grn:#3ECF8E; --grn-s:#0D2A20; --blu:#7C9CFF; --blu-s:#152040; --och:#D9A24E; --och-s:#2E230F;
+}
+:root[data-theme="light"]{
+  --bg:#F1F4F3; --surface:#FFFFFF; --sunken:#F8FAF9; --rule:#D6DEDB; --rule2:#BDC8C4;
+  --ink:#12181A; --ink2:#4B5A57; --ink3:#7E8D89;
+  --grn:#0E7A52; --grn-s:#E2F2EB; --blu:#2A5CC8; --blu-s:#E7ECFA; --och:#9A6410; --och-s:#F7EEDD;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{margin:0;font-family:var(--mono);font-weight:600;letter-spacing:-.03em;line-height:1.06;text-wrap:balance}
+p{margin:0} a{color:var(--blu)} strong,b{font-weight:650;color:var(--ink)}
+
+.rail{position:fixed;inset:0 0 auto 0;height:44px;z-index:60;display:flex;align-items:center;gap:12px;padding:0 var(--pad);
+  background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
+.rail .bd{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink2);white-space:nowrap}
+.rail .bd b{color:var(--grn)}
+.rail .tk{flex:1;height:2px;background:var(--rule);position:relative;min-width:30px}
+.rail .tk span{position:absolute;inset:0 auto 0 0;background:var(--grn);width:0;transition:width .25s}
+.rail .ct{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--ink3);font-variant-numeric:tabular-nums;white-space:nowrap}
+.rail button{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;background:none;border:1px solid var(--rule2);color:var(--ink2);padding:5px 9px;cursor:pointer;border-radius:2px}
+.rail button:hover{border-color:var(--grn);color:var(--grn)}
+:focus-visible{outline:2px solid var(--blu);outline-offset:2px}
+
+.deck{padding-top:44px}
+.slide{display:none;min-height:calc(100dvh - 44px);padding:clamp(22px,3vh,44px) var(--pad) 80px;animation:f .28s ease}
+.slide.on{display:block}
+@keyframes f{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.slide{animation:none}}
+.wrap{max-width:var(--maxw);margin:0 auto;display:flex;flex-direction:column;gap:clamp(14px,2vh,24px)}
+.eye{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--grn);display:flex;align-items:center;gap:10px}
+.eye::after{content:"";flex:1;height:1px;background:var(--rule)}
+h2.t{font-size:clamp(23px,3.1vw,38px)} h3.t{font-size:clamp(17px,2vw,23px)}
+.lede{font-size:clamp(15px,1.3vw,18px);color:var(--ink2);max-width:70ch;line-height:1.5}
+.lede b{color:var(--ink)}
+
+.g2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.g4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.g21{display:grid;grid-template-columns:1.3fr 1fr;gap:20px;align-items:start}
+@media (max-width:900px){.g2,.g3,.g4,.g21{grid-template-columns:1fr}}
+@media (max-width:900px) and (min-width:540px){.g4{grid-template-columns:repeat(2,1fr)}}
+.stack{display:flex;flex-direction:column;gap:12px}
+
+.card{background:var(--surface);border:1px solid var(--rule);border-radius:3px;padding:14px 16px;display:flex;flex-direction:column;gap:7px}
+.card h4{font-family:var(--sans);font-size:14px;font-weight:660;letter-spacing:0;line-height:1.3}
+.card p,.card li{font-size:13.5px;color:var(--ink2);line-height:1.5}
+.card .tag{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3)}
+.card.g{border-left:3px solid var(--grn)} .card.b{border-left:3px solid var(--blu)} .card.o{border-left:3px solid var(--och)}
+ul.t{margin:0;padding-left:16px;display:flex;flex-direction:column;gap:5px;font-size:13.5px;color:var(--ink2)}
+ul.t b{color:var(--ink)}
+
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:3px;overflow:hidden}
+.stat{background:var(--surface);padding:12px 14px;display:flex;flex-direction:column;gap:3px}
+.stat .n{font-family:var(--mono);font-size:clamp(20px,2.4vw,29px);font-weight:600;letter-spacing:-.04em;font-variant-numeric:tabular-nums;line-height:1}
+.stat .n.g{color:var(--grn)} .stat .n.b{color:var(--blu)} .stat .n.o{color:var(--och)}
+.stat .l{font-size:12px;color:var(--ink2);line-height:1.35}
+.stat .s{font-family:var(--mono);font-size:9px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink3)}
+
+.co{border-radius:3px;padding:12px 15px;display:flex;flex-direction:column;gap:5px;font-size:14px;line-height:1.5}
+.co .lab{font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;font-weight:600}
+.co.say{background:var(--grn-s);border-left:3px solid var(--grn)} .co.say .lab{color:var(--grn)}
+.co.say q{font-family:var(--mono);font-size:clamp(13px,1.25vw,15.5px);line-height:1.45;display:block;letter-spacing:-.01em}
+.co.edge{background:var(--blu-s);border-left:3px solid var(--blu)} .co.edge .lab{color:var(--blu)}
+.co.warn{background:var(--och-s);border-left:3px solid var(--och)} .co.warn .lab{color:var(--och)}
+
+.tw{overflow-x:auto;border:1px solid var(--rule);border-radius:3px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:540px;font-size:13px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--rule);vertical-align:top;line-height:1.4}
+thead th{font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3);font-weight:500;background:var(--sunken);border-bottom:1px solid var(--rule2);white-space:nowrap}
+tbody tr:last-child td{border-bottom:none}
+td.n,th.n{font-variant-numeric:tabular-nums;white-space:nowrap;font-family:var(--mono);font-size:12.5px}
+td.k{font-weight:640;color:var(--ink);white-space:nowrap}
+td small{display:block;color:var(--ink3);font-size:11.5px;margin-top:2px}
+.hg{color:var(--grn);font-weight:640} .hb{color:var(--blu);font-weight:640} .ho{color:var(--och);font-weight:640}
+tr.mk td{background:var(--grn-s)} tr.mko td{background:var(--och-s)}
+
+.steps{display:flex;flex-direction:column}
+.step{display:grid;grid-template-columns:30px 1fr;gap:12px;padding:10px 0;border-top:1px solid var(--rule)}
+.step:first-child{border-top:none}
+.step .no{font-family:var(--mono);font-size:10.5px;color:var(--grn);padding-top:3px;font-variant-numeric:tabular-nums}
+.step h4{font-family:var(--sans);font-size:14px;font-weight:640;margin-bottom:2px}
+.step p{font-size:13px;color:var(--ink2)}
+.kv{display:flex;flex-direction:column}
+.kv div{display:grid;grid-template-columns:minmax(110px,.4fr) 1fr;gap:12px;padding:7px 0;border-top:1px solid var(--rule);font-size:13px}
+.kv div:first-child{border-top:none}
+.kv b:first-child{font-family:var(--mono);font-size:9.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink3);padding-top:2px}
+.kv span{color:var(--ink2)}
+.src{font-family:var(--mono);font-size:9.5px;letter-spacing:.05em;color:var(--ink3);line-height:1.6}
+.split{border-top:1px solid var(--rule);padding-top:12px}
+.badge{font-family:var(--mono);font-size:8.5px;letter-spacing:.12em;text-transform:uppercase;padding:2px 6px;border-radius:2px;border:1px solid var(--rule2);color:var(--ink3);white-space:nowrap;display:inline-block}
+.badge.g{color:var(--grn);border-color:var(--grn)} .badge.o{color:var(--och);border-color:var(--och)} .badge.b{color:var(--blu);border-color:var(--blu)}
+
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:60;height:50px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 var(--pad);
+  background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(10px);border-top:1px solid var(--rule)}
+.bar .tt{font-size:12px;color:var(--ink3);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.nb{background:var(--surface);border:1px solid var(--rule2);color:var(--ink);width:32px;height:30px;border-radius:2px;cursor:pointer;font-size:13px;display:inline-flex;align-items:center;justify-content:center}
+.nb:hover{border-color:var(--grn);color:var(--grn)} .nb[disabled]{opacity:.35;cursor:default}
+.ng{display:flex;gap:6px;align-items:center}
+.hint{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3)}
+@media (max-width:700px){.hint{display:none}}
+
+.idx{position:fixed;inset:0;z-index:80;background:var(--bg);overflow-y:auto;padding:64px var(--pad) 56px;display:none}
+.idx.on{display:block}
+.idx-h{max-width:var(--maxw);margin:0 auto 18px}
+.ip{max-width:var(--maxw);margin:0 auto 18px}
+.ip>h4{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--grn);padding-bottom:6px;border-bottom:1px solid var(--rule);margin-bottom:9px}
+.ig{display:grid;grid-template-columns:repeat(auto-fill,minmax(225px,1fr));gap:7px}
+.ii{text-align:left;background:var(--surface);border:1px solid var(--rule);border-radius:2px;padding:8px 10px;cursor:pointer;display:flex;gap:8px;align-items:baseline;font:inherit;color:var(--ink)}
+.ii:hover{border-color:var(--grn)}
+.ii .n{font-family:var(--mono);font-size:9.5px;color:var(--ink3);font-variant-numeric:tabular-nums}
+.ii .x{font-size:12.5px;line-height:1.35}
+
+.cover{display:flex;flex-direction:column;gap:22px;justify-content:center;min-height:calc(100dvh - 180px)}
+.cover .kick{font-family:var(--mono);font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--grn)}
+.cover h1{font-size:clamp(30px,5.6vw,68px);line-height:1;letter-spacing:-.045em}
+.cover h1 em{font-style:normal;color:var(--grn)}
+.cover .sub{font-size:clamp(15px,1.6vw,20px);color:var(--ink2);max-width:62ch;line-height:1.45}
+.cover .rb{height:3px;background:var(--grn);width:80px}
+.figs{display:flex;flex-wrap:wrap;gap:1px;border:1px solid var(--rule);border-radius:3px;overflow:hidden;background:var(--rule)}
+.figs>div{flex:1 1 180px;background:var(--surface);padding:14px 16px;display:flex;flex-direction:column;gap:3px}
+.figs .n{font-family:var(--mono);font-size:clamp(23px,3vw,36px);font-weight:600;letter-spacing:-.045em;line-height:1;font-variant-numeric:tabular-nums}
+.figs .l{font-size:12px;color:var(--ink2);line-height:1.35}
+.meta{font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--ink3);line-height:1.9;text-transform:uppercase}
+
+@media print{.rail,.bar,.idx{display:none!important}.deck{padding-top:0}.slide{display:block!important;min-height:0;page-break-after:always;padding:0 0 22px;animation:none}body{background:#fff;color:#000;font-size:11pt}.tw{overflow:visible}}
+</style>
+
+<header class="rail">
+  <div class="bd">Circle LATAM · <b>Marketing Director</b></div>
+  <div class="tk"><span id="prog"></span></div>
+  <div class="ct" id="count">01 / 23</div>
+  <button id="themeBtn" type="button">Theme</button>
+  <button id="idxBtn" type="button">Index</button>
+</header>
+
+<main class="deck" id="deck">
+
+<section class="slide on" data-part="Open" data-title="Cover">
+  <div class="wrap cover">
+    <div class="rb"></div>
+    <div class="kick">Interview brief · 12 August 2026</div>
+    <h1>USDT owns ~90% of LATAM. Circle's opening isn't distribution — it's <em>the regulation that just landed</em>.</h1>
+    <p class="sub">Everything that might come up in the room: the business model, the numbers, the competitive reality, the new rulebooks in Brazil and Argentina, and what a regional marketing function should actually do about it.</p>
+    <div class="figs">
+      <div><span class="n">$73.3B</span><span class="l">USDC in circulation, Q2 2026 (+19% YoY)</span></div>
+      <div><span class="n">~90%</span><span class="l">USDT share of stablecoin volume in Brazil and Chile</span></div>
+      <div><span class="n">$324B</span><span class="l">LATAM stablecoin transaction volume, 2025 (+89%)</span></div>
+      <div><span class="n">2 Feb 26</span><span class="l">Brazil's new crypto framework in force</span></div>
+    </div>
+    <p class="meta">Prepared for Marc Lebreton · Regional Marketing Director, LATAM · São Paulo<br>Independent analysis from public sources · Not a Circle document · Figures current to Q2 2026, reported 5 August 2026</p>
+  </div>
+</section>
+
+<section class="slide" data-part="Open" data-title="The thesis">
+  <div class="wrap">
+    <div class="eye">The thesis</div>
+    <h2 class="t">You will not out-distribute Tether in LATAM. You can out-qualify it.</h2>
+    <p class="lede">USDT is the default dollar across the region — near 100% of volume in Bolivia, Peru and Ecuador, roughly 90% in Brazil and Chile. That is a retail network effect built over a decade, and no marketing budget reverses it. <b>But the buyer that matters to Circle isn't retail.</b></p>
+    <div class="g4">
+      <div class="card g"><span class="tag">Beat 1</span><h4>Circle sells to institutions, not to savers</h4><p>Revenue comes from reserves on balances held through banks, fintechs, PSPs and exchanges. The marketing target is a compliance officer, a treasurer and a CTO — not a person hedging their salary.</p></div>
+      <div class="card g"><span class="tag">Beat 2</span><h4>Regulation just became a gate</h4><p>Brazil's BCB framework took force 2 February 2026 and reclassifies stablecoin activity as FX. Argentina's banks are being let in. Regulated counterparties now need a regulated issuer.</p></div>
+      <div class="card g"><span class="tag">Beat 3</span><h4>Circle's product is trust, and it's provable</h4><p>NYSE-listed, audited reserves, GENIUS-aligned, and now with BlackRock, Visa, Mastercard and DTCC validating its chain. Tether cannot make that claim.</p></div>
+      <div class="card g"><span class="tag">Beat 4</span><h4>So marketing's job is category, not conquest</h4><p>Not "switch from USDT". Rather: make regulated stablecoin infrastructure the obvious build for LATAM enterprises — and be the default when they choose.</p></div>
+    </div>
+    <div class="co say">
+      <span class="lab">The opening line</span>
+      <q>Tether won the savings account. That fight is over. The one that isn't is the treasury, the payout rail and the bank ledger — and that's a fight decided by regulation, audits and integrations, which is where Circle is strong and Tether structurally isn't.</q>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-part="Open" data-title="Contents">
+  <div class="wrap">
+    <div class="eye">Contents</div>
+    <h2 class="t">Eight parts.</h2>
+    <div class="g2">
+      <div class="stack">
+        <div class="step"><span class="no">01</span><div><h4>Circle, the business</h4><p>How it actually makes money, the Q2 2026 numbers, the Coinbase renewal happening this month, Arc, and CPN.</p></div></div>
+        <div class="step"><span class="no">02</span><div><h4>The LATAM market</h4><p>Size, use-case split, and the country-by-country picture across Argentina, Brazil, Mexico, Colombia, Chile and Peru.</p></div></div>
+        <div class="step"><span class="no">03</span><div><h4>The competitive reality</h4><p>USDT's dominance with the real numbers, Tether's regional offensive, local currency stablecoins, and where Circle actually wins.</p></div></div>
+        <div class="step"><span class="no">04</span><div><h4>Regulation as the wedge</h4><p>Brazil's three resolutions, Argentina's CNV and BCRA moves, and why this is a marketing asset rather than a legal footnote.</p></div></div>
+      </div>
+      <div class="stack">
+        <div class="step"><span class="no">05</span><div><h4>Circle's LATAM footprint today</h4><p>Nubank, BTG Pactual, Matera, Grupo BIND, Alfred Pay — what exists, what it signals, and what's missing.</p></div></div>
+        <div class="step"><span class="no">06</span><div><h4>The marketing strategy</h4><p>Who the audience really is, segmentation, channels, developer marketing, events, and the brand-versus-demand split.</p></div></div>
+        <div class="step"><span class="no">07</span><div><h4>The plan</h4><p>First 90 days, year one, and how a regional marketing function should be measured in a business like this.</p></div></div>
+        <div class="step"><span class="no">08</span><div><h4>Interview kit</h4><p>Questions to ask, lines to have ready, objections you'll face, how to position yourself, and what to verify first.</p></div></div>
+      </div>
+    </div>
+    <div class="co edge">
+      <span class="lab">How to read it</span>
+      <div>Arrows or <b>Space</b> to move · <b>I</b> for the index · <b>P</b> to print. Colour carries meaning: <span class="hg">green</span> is the argument, <span class="hb">blue</span> is the differentiated move, <span class="ho">ochre</span> is a risk or something to verify before you say it out loud.</div>
+    </div>
+  </div>
+</section>
+<!-- PART 1 -->
+<section class="slide" data-part="01 · The business" data-title="How Circle makes money">
+  <div class="wrap">
+    <div class="eye">01 · Circle, the business</div>
+    <h2 class="t">Circle is a reserve-income business wearing a payments-company jacket.</h2>
+    <p class="lede">This is the single most important thing to understand before the interview, because it determines what marketing is actually for. <b>Circle earns interest on the dollars backing USDC.</b> Not a take rate on payments, not software subscriptions — interest on float.</p>
+    <div class="g21">
+      <div class="stack">
+        <div class="card g">
+          <span class="tag">The chain that connects marketing to revenue</span>
+          <h4>Balances are the product</h4>
+          <p style="font-size:14.5px;color:var(--ink)">more USDC issued → larger reserve pool → more interest income → revenue</p>
+          <div class="split">
+            <p>So every marketing metric that matters ladders to <b>USDC in circulation held through partners in the region</b>, and to the durability of those balances. A campaign that drives a spike in transactions but no resting balance does very little for Circle's P&amp;L.</p>
+            <p><b>Corollary worth saying out loud:</b> Circle's LATAM revenue is a function of how much USDC Brazilian and Argentine institutions <em>hold</em>, not how much they move. That reframes the whole funnel.</p>
+          </div>
+        </div>
+        <div class="co warn">
+          <span class="lab">The structural vulnerability — know it, don't lead with it</span>
+          <div>The model is highly sensitive to interest rates. If rates fall, revenue falls on the same balances. That is the strategic reason Circle is building <b>Arc</b> and <b>CPN</b> — to add revenue that isn't reserve interest. Understanding that makes you sound like someone who read the S-1, not the press releases.</div>
+        </div>
+      </div>
+      <div class="stack">
+        <div class="card o">
+          <span class="tag">Distribution is the biggest cost line</span>
+          <h4>Circle keeps roughly $0.37 of every reserve dollar</h4>
+          <ul class="t">
+            <li>Circle shares roughly <b>50% of USDC interest income with Coinbase</b> under the 2023 agreement. Coinbase took ~56% of USDC reserve revenue in 2024.</li>
+            <li>Distribution and transaction costs were <b>$1.011B in 2024</b>, up from $719.8M in 2023.</li>
+            <li><b class="ho">That agreement is up for renewal in August 2026 — this month.</b> Small changes to Circle's take rate compound against rate and supply scenarios.</li>
+          </ul>
+        </div>
+        <div class="co edge">
+          <span class="lab">Why this matters for a LATAM marketing role</span>
+          <div>Distribution economics are why <b>direct regional partnerships matter so much</b>. Balances Circle originates itself through Nubank, BTG or a Brazilian PSP carry very different economics from balances that arrive via Coinbase. A regional function that originates its own distribution is defending margin, not just building brand — and that is the language to use when justifying budget.</div>
+        </div>
+      </div>
+    </div>
+    <p class="src">Sources: Circle Q2 2026 results (5 Aug 2026) · Sacra equity research · FY2024/FY2025 disclosures on distribution cost.</p>
+  </div>
+</section>
+
+<section class="slide" data-part="01 · The business" data-title="Q2 2026 numbers">
+  <div class="wrap">
+    <div class="eye">01 · Circle, the business</div>
+    <h2 class="t">The numbers you should be able to quote cold.</h2>
+    <div class="stats">
+      <div class="stat"><span class="n">$701M</span><span class="l">Total revenue and reserve income, Q2 2026</span><span class="s">+7% YoY</span></div>
+      <div class="stat"><span class="n g">$73.3B</span><span class="l">USDC in circulation at quarter end</span><span class="s">+19% YoY</span></div>
+      <div class="stat"><span class="n">$76.5B</span><span class="l">Average circulation — an all-time high</span></div>
+      <div class="stat"><span class="n b">$14.8T</span><span class="l">USDC onchain transaction volume in the quarter</span><span class="s">+151% YoY</span></div>
+      <div class="stat"><span class="n">$143M</span><span class="l">Adjusted EBITDA, 50% margin</span><span class="s">+8% YoY</span></div>
+      <div class="stat"><span class="n">41.2%</span><span class="l">Revenue less distribution cost margin</span><span class="s">+3pp YoY</span></div>
+    </div>
+    <div class="g2">
+      <div class="card g">
+        <span class="tag">Read the divergence — it's the most interesting thing in the release</span>
+        <h4>Volume up 151%. Revenue up 7%.</h4>
+        <p>Transaction volume is growing more than twenty times faster than revenue, because <b>Circle monetises balances, not transactions</b>. Every dollar of that $14.8 trillion moved across rails Circle largely does not charge for.</p>
+        <p><b class="hg">That gap is the entire strategic rationale for Arc and CPN</b> — building surfaces where activity itself earns. If you want one observation that demonstrates you understand the business, this is it.</p>
+      </div>
+      <div class="card b">
+        <span class="tag">And the newer line</span>
+        <h4>Other revenue guidance doubled to $310–330M</h4>
+        <ul class="t">
+          <li>Driven by <b>$242M of Arc token presale revenue</b>, roughly 75% expected to be recognised in 2026.</li>
+          <li>Circle swung to a Q2 profit and lifted full-year 2026 guidance.</li>
+          <li>This is the first material evidence that non-reserve revenue can be built — which is exactly the story the equity market is watching.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="co say">
+      <span class="lab">Say this</span>
+      <q>Onchain volume grew a hundred and fifty-one percent last quarter while revenue grew seven, because the business monetises balances rather than throughput. Everything Circle is building right now — Arc, CPN — is an attempt to close that gap. A regional function should be judged on which side of it it's feeding.</q>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-part="01 · The business" data-title="Arc">
+  <div class="wrap">
+    <div class="eye">01 · Circle, the business</div>
+    <h2 class="t">Arc — the bet that Circle becomes infrastructure rather than an issuer.</h2>
+    <p class="lede">Circle's own Layer-1, with <b>public mainnet on 16 September 2026</b> — roughly a month after you interview. Expect it to come up, and expect enthusiasm.</p>
+    <div class="g21">
+      <div class="stack">
+        <div class="card b">
+          <span class="tag">The founding validator cohort — announced 5 August 2026</span>
+          <h4>Eleven institutions, and the list <em>is</em> the message</h4>
+          <p style="font-family:var(--mono);font-size:13px;color:var(--ink);line-height:1.7">BlackRock · DTCC · Galaxy · Global Payments · Intercontinental Exchange · Mastercard · MoneyGram · SBI Group · Standard Chartered · Sumitomo Corporation · Visa</p>
+          <div class="split">
+            <ul class="t">
+              <li><b>BlackRock</b> is expected to deploy BUIDL — its institutional digital liquidity fund — on Arc, using native USDC.</li>
+              <li><b>DTCC</b> will work with Circle on tokenising DTC-custodied assets, beginning in H2 2027.</li>
+              <li>Over <b>100 ecosystem and institutional builders</b> are already in private mainnet.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="stack">
+        <div class="card g">
+          <span class="tag">Why it matters to the LATAM pitch</span>
+          <h4>It is the trust argument, made concrete</h4>
+          <p>To a Brazilian bank's risk committee, "BlackRock, Visa, Mastercard and the DTCC run validators on this network" does more work than any brand campaign. <b>It converts an abstract claim about legitimacy into a list of names the committee already banks with.</b></p>
+          <p><b class="hg">Marketing implication:</b> in LATAM, lead with the institutional roster, not with throughput or fees. The buyer's real question is "will this survive an audit and a regulator", and that list answers it.</p>
+        </div>
+        <div class="co warn">
+          <span class="lab">Handle with care</span>
+          <div>MoneyGram and Global Payments are validators — both compete directly with the remittance and payment players you'd want as LATAM partners. If asked about channel conflict, that's a real and thoughtful question, and "I'd want to understand how we position CPN to MTOs who see MoneyGram on the validator list" is a strong thing to say.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-part="01 · The business" data-title="CPN">
+  <div class="wrap">
+    <div class="eye">01 · Circle, the business</div>
+    <h2 class="t">Circle Payments Network — the product a LATAM marketer actually sells.</h2>
+    <p class="lede">CPN is live on mainnet. It coordinates regulated financial institutions to move value using USDC as the settlement asset, with fiat in and fiat out at each end. <b>This is where LATAM is most obviously relevant, because LATAM is a payout market.</b></p>
+    <div class="g2">
+      <div class="card g">
+        <span class="tag">The LATAM connective tissue already built</span>
+        <h4>Local currency payouts through partner institutions</h4>
+        <ul class="t">
+          <li><b>Alfred Pay</b> — infrastructure across LATAM, strong in Brazil and Mexico. As a beneficiary institution on CPN it enables stablecoin-to-fiat off-ramps <b>via PIX and SPEI</b>, giving real-time payouts in the highest-demand corridors.</li>
+          <li>Local currency payout support now covers <b>Brazil and Colombia</b> among others, via partners including Alfred, TazaPay and Yellow Card.</li>
+          <li><b>Movantis</b> joined CPN — over <b>$60B moved annually</b>, 80,000+ payout locations, 70+ money transfer operators, 130+ countries, operating in both directions.</li>
+        </ul>
+      </div>
+      <div class="card b">
+        <span class="tag">What it's for</span>
+        <h4>Disbursements, supplier payments, remittances, payroll</h4>
+        <p>Not consumer trading. The buyer is a business with a cross-border payment problem: paying suppliers, paying contractors, settling with marketplaces, moving treasury.</p>
+        <div class="split">
+          <p><b class="hb">The marketing consequence:</b> this is B2B demand generation with long, considered sales cycles — content, case studies, developer docs, field events and partner co-marketing. It is not a brand-awareness or consumer-acquisition motion, and if you pitch it as one you'll misread the role.</p>
+        </div>
+      </div>
+    </div>
+    <div class="co edge">
+      <span class="lab">The connection to make in the room</span>
+      <div>PIX and SPEI are the two best real-time payment rails in the Americas, and both now have USDC on-ramps and off-ramps. That means <b>a dollar can move from a US business to a Brazilian supplier's bank account in minutes, at well under 1%</b> — against correspondent banking that takes days. That is the single clearest value proposition Circle has in the region, and it needs no crypto vocabulary to explain.</div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-part="01 · The business" data-title="The product surface">
+  <div class="wrap">
+    <div class="eye">01 · Circle, the business</div>
+    <h2 class="t">The full product surface — what you would actually be marketing.</h2>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Product</th><th>What it is</th><th>Who buys it</th><th>LATAM relevance</th></tr></thead>
+        <tbody>
+          <tr class="mk"><td class="k">USDC</td><td>The dollar stablecoin. Circulation $73.3B</td><td>Everyone — via partners</td><td class="hg">The core. Every other product exists to grow or defend balances</td></tr>
+          <tr><td class="k">EURC</td><td>Euro stablecoin</td><td>European corridors, FX</td><td>Secondary, but relevant for Brazil–Europe trade flows</td></tr>
+          <tr><td class="k">Circle Mint</td><td>Institutional issuance and redemption — mint and burn USDC at par</td><td>Exchanges, banks, PSPs, large treasuries</td><td><b>Now live in Brazil and Mexico with local-currency bank transfer via PIX and SPEI</b> — minutes rather than days, no international wire</td></tr>
+          <tr><td class="k">CPN</td><td>Cross-border payments network settling in USDC</td><td>Banks, PSPs, MTOs, marketplaces</td><td>High. LATAM is a payout-heavy region</td></tr>
+          <tr><td class="k">Arc</td><td>Circle's L1, public mainnet 16 Sept 2026</td><td>Institutional builders, tokenisation</td><td>Emerging. The credibility story more than a near-term revenue line here</td></tr>
+          <tr><td class="k">Developer platform</td><td>Wallets, Paymaster/gas abstraction, Contracts, APIs</td><td>Fintech engineers, startups</td><td>High — LATAM has a deep fintech developer base</td></tr>
+          <tr><td class="k">Compliance surface</td><td>Attestations, audited reserves, Transparency reporting</td><td>Risk and compliance officers</td><td class="hg">Arguably the highest-leverage marketing asset in the region right now</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="co say">
+      <span class="lab">A question that shows you understand the portfolio</span>
+      <q>Is the LATAM mandate primarily about growing USDC balances through local partners, or about driving CPN adoption as a payments product? Because those are two different marketing functions — one is partner and category marketing, the other is B2B demand generation — and I'd want to know which one I'm being measured on.</q>
+    </div>
+  </div>
+</section>
+<!-- PART 2 -->
+<section class="slide" data-part="02 · The market" data-title="LATAM demand">
+  <div class="wrap">
+    <div class="eye">02 · The LATAM market</div>
+    <h2 class="t">LATAM isn't an emerging stablecoin market. It's the most advanced one.</h2>
+    <div class="stats">
+      <div class="stat"><span class="n g">$324B</span><span class="l">LATAM stablecoin transaction volume in 2025</span><span class="s">+89% YoY</span></div>
+      <div class="stat"><span class="n">24%</span><span class="l">of Argentines hold crypto — 11.2M people, the highest adoption rate in the world</span></div>
+      <div class="stat"><span class="n">$47B</span><span class="l">Argentine stablecoin transaction volume, 2025</span></div>
+      <div class="stat"><span class="n">$14.68B</span><span class="l">Brazilian crypto purchases, H1 2026 — up 135%</span></div>
+      <div class="stat"><span class="n">$174B</span><span class="l">Remittances to LATAM in 2025</span></div>
+      <div class="stat"><span class="n b">+100%</span><span class="l">Growth in LATAM enterprise stablecoin adoption in a year</span></div>
+    </div>
+    <div class="g21">
+      <div class="card g">
+        <span class="tag">The use-case split — and it's the key to segmentation</span>
+        <h4>Argentina's $47B breaks down as 68% savings, 22% payments, 10% remittances</h4>
+        <p>That distribution explains everything about why USDT leads. <b>Two-thirds of LATAM stablecoin demand is people storing value against currency risk</b> — a consumer behaviour where the incumbent's ubiquity and P2P liquidity are almost impossible to dislodge.</p>
+        <p><b class="hg">But the other third — payments and remittances — is institutional, corridor-based, and increasingly regulated.</b> That segment is contestable, it's where CPN and Mint compete, and it's where a marketing budget can actually move share.</p>
+      </div>
+      <div class="stack">
+        <div class="card b">
+          <span class="tag">Why the region adopted faster than anywhere</span>
+          <ul class="t">
+            <li><b>Currency instability</b> — Argentine savers convert pesos to dollars on payday as a reflex; stablecoins made that instant and self-custodied.</li>
+            <li><b>Capital controls and FX friction</b> — official dollar access has been rationed or expensive for years.</li>
+            <li><b>Excellent instant payment rails</b> — PIX and SPEI make the fiat leg trivial, which is exactly what most markets lack.</li>
+            <li><b>Deep fintech sector</b> — Nubank, Mercado Pago, Bitso, Ualá already own the customer relationship and the compliance stack.</li>
+          </ul>
+        </div>
+        <div class="co edge">
+          <span class="lab">The framing that lands</span>
+          <div>In most of the world stablecoins are a crypto product looking for a use case. In LATAM they are <b>a dollar-access product that happens to run on crypto rails</b> — and most people using them do not consider themselves crypto users at all. Market to the problem, not the technology.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-part="02 · The market" data-title="Country by country">
+  <div class="wrap">
+    <div class="eye">02 · The LATAM market</div>
+    <h2 class="t">Six markets, six different jobs.</h2>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Market</th><th>Demand driver</th><th>Regulatory state</th><th>Circle's position</th><th>The marketing job</th></tr></thead>
+        <tbody>
+          <tr class="mk"><td class="k">Brazil</td><td>Payments, corporate treasury, trade. Crypto purchases <b>+135% to $14.68B</b> in H1 2026</td><td class="hg">The most comprehensive framework in LATAM, in force 2 Feb 2026</td><td>Strongest — Nubank, BTG Pactual, Matera; Mint live via PIX</td><td>Category leadership. Own the compliant-issuer position while everyone re-papers for the new rules</td></tr>
+          <tr><td class="k">Argentina</td><td>Savings and dollarisation. 24% of the population holds crypto; $47B volume</td><td>Liberalising fast — CNV recognition, BCRA letting banks in</td><td>New: Grupo BIND via its BEN platform; building a local team</td><td>Institutional beachhead. Banks are being allowed in for the first time since 2022 — be their default issuer</td></tr>
+          <tr><td class="k">Mexico</td><td>Remittances above all — <b>$61.8B received in 2025</b>, though down 4.5%</td><td>Moderate; fintech law mature, crypto conservative</td><td>Mint live via SPEI; expansion stated</td><td>Corridor marketing. The US–Mexico remittance corridor is the single largest stablecoin payments prize in the hemisphere</td></tr>
+          <tr><td class="k">Colombia</td><td>Payments and freelance/gig dollar income</td><td>Developing; VASP rules maturing</td><td>Named expansion target; CPN local-currency payout live</td><td>Early. Build the partner bench before the market is contested</td></tr>
+          <tr><td class="k">Chile</td><td>Savings and cross-border commerce. <b>~90% USDT share</b></td><td>Fintech law in force, relatively clear</td><td>Thin</td><td>Opportunistic. Small market, sophisticated buyers, good for proof points</td></tr>
+          <tr><td class="k">Peru / Bolivia / Ecuador</td><td>Cash substitution — USDT at <b>near 100%</b> of volume, used for groceries and restaurants</td><td>Sparse. Bolivia only recently lifted its ban</td><td>Effectively absent</td><td>Not a year-one priority, and saying so is a strength</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="co warn">
+      <span class="lab">Don't over-claim the region</span>
+      <div>A LATAM marketing plan that promises equal effort in six markets is a plan nobody believes. The defensible version is <b>Brazil and Mexico as the revenue markets, Argentina as the highest-velocity opportunity, Colombia as the build-ahead bet</b>, and the Andean cash-substitution markets explicitly deprioritised. Naming what you won't do is how you demonstrate you've actually prioritised.</div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-part="02 · The market" data-title="The remittance corridor">
+  <div class="wrap">
+    <div class="eye">02 · The LATAM market</div>
+    <h2 class="t">The remittance corridor — where stablecoins already beat the incumbents on price.</h2>
+    <div class="g21">
+      <div class="stack">
+        <div class="card g">
+          <span class="tag">The proof points already in market</span>
+          <ul class="t">
+            <li><b>Bitso</b> processed over <b>$6.5B of remittances in 2024</b> — more than 10% of the entire US–Mexico corridor, up from roughly 5% in 2022. By December 2025 it reached <b>$82B annualised total payment volume</b>.</li>
+            <li><b>Felix Pago</b> has moved over <b>$1B</b> through a USDC-to-SPEI model that settles <b>over WhatsApp</b>, at fees well below Western Union.</li>
+            <li>Bitso's crypto-rail transfers cost <b>under 1%</b> all-in, including on-ramp and off-ramp.</li>
+            <li>Mexico's share of Bitso Business volumes rose from 45% to 47% — enterprise, not retail.</li>
+          </ul>
+        </div>
+        <div class="co say">
+          <span class="lab">The line that makes this concrete for a non-crypto audience</span>
+          <q>A Mexican family receiving money from the US can already do it through a stablecoin rail over WhatsApp for under one percent, settled in seconds to a SPEI account. That's not a pilot — it's over a billion dollars processed. The question for Circle isn't whether the rail works. It's whether the dollar on that rail is ours.</q>
+        </div>
+      </div>
+      <div class="stack">
+        <div class="card o">
+          <span class="tag">The competitive complication</span>
+          <h4>The corridor is being fought over by everyone at once</h4>
+          <ul class="t">
+            <li><b>Bitso launched MXNB</b>, a Mexican peso stablecoin, through its subsidiary Juno — issued on XRPL and integrated into Ripple's payments infrastructure. A local-currency stablecoin removes an FX conversion, which is precisely the friction USDC monetises.</li>
+            <li><b>Ripple</b> is pushing the US–Mexico corridor hard with XRP Ledger.</li>
+            <li>MoneyGram and Global Payments — both Arc validators — are incumbents in this same corridor.</li>
+          </ul>
+        </div>
+        <div class="co edge">
+          <span class="lab">The nuance worth having ready</span>
+          <div>Local-currency stablecoins like MXNB are <b>not purely a threat</b>. A USDC→MXNB leg still needs a credible dollar asset on one side, and Circle's position is strongest as the dollar in every pair. The strategic risk is being disintermediated on corridors that never touch a dollar at all — which is a real question to raise, and a sophisticated one.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PART 3 -->
+<section class="slide" data-part="03 · Competition" data-title="USDT dominance">
+  <div class="wrap">
+    <div class="eye">03 · The competitive reality</div>
+    <h2 class="t">The honest numbers on Tether — know them before someone tests you.</h2>
+    <div class="g2">
+      <div class="card o">
+        <span class="tag">Share of stablecoin transaction volume</span>
+        <h4>USDT's LATAM position is close to total</h4>
+        <div class="kv">
+          <div><b>Bolivia</b><span>Near 100%</span></div>
+          <div><b>Peru</b><span>Near 100%</span></div>
+          <div><b>Ecuador</b><span>Near 100%</span></div>
+          <div><b>Brazil</b><span>~90%</span></div>
+          <div><b>Chile</b><span>~90%</span></div>
+        </div>
+        <div class="split">
+          <p>USDT functions as a <b>cash equivalent</b> in these markets — used for groceries and restaurants, not just trading. In Bolivia, the auto market including Toyota, BYD and Yamaha now accepts USDT, with volume up 630% after the crypto ban lifted.</p>
+        </div>
+      </div>
+      <div class="card o">
+        <span class="tag">And Tether is not standing still</span>
+        <h4>An aggressive equity offensive across the region</h4>
+        <ul class="t">
+          <li><b>$20M into Ualá</b> (July 2026) — the Argentine neobank with 11M+ customers across Argentina, Mexico and Colombia.</li>
+          <li><b>Led a $14M round for Belo</b> (April 2026), a payments wallet expanding stablecoin payments across LATAM.</li>
+          <li>Controls <b>70% of Adecoagro</b>, an agricultural and energy producer operating across Argentina, Brazil and Uruguay.</li>
+        </ul>
+        <div class="split">
+          <p><b class="ho">Read the strategy:</b> Tether is buying distribution and real-economy anchors rather than marketing to end users. It is a balance-sheet play, and Circle cannot match it dollar for dollar.</p>
+        </div>
+      </div>
+    </div>
+    <div class="co say">
+      <span class="lab">How to handle the inevitable question — "how would you beat Tether?"</span>
+      <q>I wouldn't, not on their ground. USDT owns retail savings in LATAM through a decade of P2P liquidity, and no campaign changes that. What's genuinely open is the regulated layer — banks, PSPs, marketplaces and treasuries who now, post-February, need a counterparty that survives a BCB audit. That's a different buyer with a different decision process, and it's one where an NYSE-listed issuer with attested reserves has an advantage Tether can't buy.</q>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-part="03 · Competition" data-title="The full field">
+  <div class="wrap">
+    <div class="eye">03 · The competitive reality</div>
+    <h2 class="t">The rest of the field, and what each one actually threatens.</h2>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Competitor</th><th>Position</th><th>What it threatens</th><th>Circle's counter</th></tr></thead>
+        <tbody>
+          <tr class="mko"><td class="k">Tether (USDT)</td><td>~90–100% of LATAM volume; buying regional distribution</td><td>Everything in retail and P2P; increasingly the enterprise layer too</td><td>Regulatory standing, audited reserves, institutional validator roster</td></tr>
+          <tr><td class="k">Local-currency stablecoins<br><small>MXNB (Bitso/Juno), BRL-pegged issuers</small></td><td>Growing — MXNB on XRPL, in Ripple Payments</td><td>Removes the dollar leg entirely on domestic and some cross-border flows</td><td>Be the dollar in every pair; partner rather than compete on local currency</td></tr>
+          <tr><td class="k">Ripple / RLUSD</td><td>Pushing US–Mexico hard; XRPL integrations</td><td>The remittance corridor specifically</td><td>PIX/SPEI native on-ramps, CPN institution network, USDC liquidity depth</td></tr>
+          <tr><td class="k">PayPal PYUSD</td><td>Consumer brand strength, US-centric</td><td>Consumer trust and merchant acceptance longer term</td><td>Institutional depth and existing LATAM partner bench</td></tr>
+          <tr><td class="k">Banks' own tokens<br><small>and Drex, Brazil's CBDC programme</small></td><td>Emerging; Drex has had a long, uneven pilot</td><td>Could make a domestic bank rail the default, bypassing stablecoins</td><td>Interoperate — Matera's ledger already puts USDC alongside BRL. Position as complement, never as substitute for sovereign money</td></tr>
+          <tr><td class="k">Traditional rails<br><small>SWIFT correspondent banking, Western Union</small></td><td>Still the majority of cross-border value</td><td>Nothing technologically — but inertia and relationships are formidable</td><td>Price and speed: under 1% and seconds, versus days</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="co edge">
+      <span class="lab">The one to take most seriously</span>
+      <div>Not Tether. <b>Local-currency stablecoins.</b> If a Brazilian company can pay a Mexican supplier BRL→MXNB without ever touching a dollar, Circle isn't in the transaction at all. That is the genuine long-term structural threat to a dollar-issuer's relevance in intra-LATAM trade, and raising it unprompted signals you're thinking three years out rather than repeating a pitch deck.</div>
+    </div>
+  </div>
+</section>
+<!-- PART 4 -->
+<section class="slide" data-part="04 · Regulation" data-title="Brazil's new framework">
+  <div class="wrap">
+    <div class="eye">04 · Regulation as the wedge</div>
+    <h2 class="t">Brazil, 2 February 2026 — the most consequential thing that has happened to this market.</h2>
+    <p class="lede">The Banco Central published <b>Resolutions 519, 520 and 521</b> in November 2025; they took force on <b>2 February 2026</b>. It is the most comprehensive crypto framework in Latin America, and it changes what stablecoins legally <em>are</em> in Brazil.</p>
+    <div class="g2">
+      <div class="card g">
+        <span class="tag">Resolution 521 — the one that matters most</span>
+        <h4>Foreign-currency stablecoin operations are now FX operations</h4>
+        <ul class="t">
+          <li>Transactions in stablecoins referenced to a foreign currency are <b>classified as câmbio</b> — foreign exchange — and fall under BCB supervision.</li>
+          <li>They attract <b>IOF-Câmbio</b>, Brazil's FX transaction tax.</li>
+          <li>From <b>4 May 2026</b>, reporting these operations to the BCB became mandatory.</li>
+          <li>International transfers settled in crypto, stablecoin purchase and sale, and transfers to self-custody wallets now require <b>identification of the holder and proof of source and destination of funds</b>.</li>
+        </ul>
+      </div>
+      <div class="card g">
+        <span class="tag">And the licensing gate</span>
+        <h4>PSAV authorisation is now required</h4>
+        <p>From February, firms that intermediate, custody or trade crypto assets for third parties need <b>prior authorisation from the Banco Central</b> — the PSAV licence — to operate in Brazil.</p>
+        <div class="split">
+          <p><b class="hg">This is the entire marketing opportunity in one sentence:</b> every Brazilian institution touching stablecoins has just been forced to re-paper its counterparty relationships under a regime where identification, provenance and audit trail are mandatory. In that re-papering, "who issues the dollar we hold" becomes a question with a compliance answer rather than a liquidity answer.</p>
+        </div>
+      </div>
+    </div>
+    <div class="co say">
+      <span class="lab">The strategic read to bring into the room</span>
+      <q>February didn't just regulate the market — it reclassified stablecoins as foreign exchange and put them under the central bank. That turns the choice of issuer into a compliance decision made by a risk committee rather than a liquidity decision made by a trading desk. That's a decision Circle should win, and it's a marketing problem before it's a sales problem.</q>
+    </div>
+    <div class="co warn">
+      <span class="lab">Verify before you assert</span>
+      <div>I could not confirm from public sources whether <b>Circle itself holds or is pursuing a PSAV authorisation</b>, or how its Brazilian partners are licensed post-February. That is the single highest-value question you could ask in the interview, and asking it demonstrates you understand what actually gates the business here.</div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-part="04 · Regulation" data-title="Argentina and the rest">
+  <div class="wrap">
+    <div class="eye">04 · Regulation as the wedge</div>
+    <h2 class="t">Argentina is opening — and the timing is unusually good.</h2>
+    <div class="g21">
+      <div class="stack">
+        <div class="card g">
+          <span class="tag">What has changed under Milei</span>
+          <ul class="t">
+            <li><b>The BCRA is reversing its 2022 prohibition</b> on banks offering crypto services, with rules moving through 2026. Licensed banks including <b>Banco Galicia, BBVA Argentina and Santander Argentina</b> have begun offering custody, trading and payment services to retail customers.</li>
+            <li><b>CNV General Resolution 1125/2026</b> recognises virtual assets — explicitly including stablecoins — as counting toward the net worth threshold for qualified investor status.</li>
+            <li>VASP registration with the CNV is required above roughly 35,000 UVA (about US$29,000) of monthly volume.</li>
+            <li><b class="ho">And the enforcement signal:</b> the CNV issued a cease-and-desist against ARGt (Twin Finance), a peso-pegged stablecoin offering up to 32% APR, treating it as an unregistered security under a Howey-style test — the first stablecoin-specific securities enforcement in Argentina.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="stack">
+        <div class="card b">
+          <span class="tag">Why this is the highest-velocity opportunity in the region</span>
+          <h4>Argentine banks are entering a market where 24% of the population already holds crypto</h4>
+          <p>Those banks need an issuer that survives a regulator's review, and they are choosing counterparties <b>right now</b>. Circle's Grupo BIND partnership — announced during Jeremy Allaire's visit to Buenos Aires, giving institutional USDC access through BIND's BEN platform — is precisely the right shape of first move.</p>
+          <p><b class="hb">A marketing function landing in the next six months can help define the default before the category settles.</b> That is rare, and it is the argument for prioritising Argentina above its GDP weight.</p>
+        </div>
+        <div class="co edge">
+          <span class="lab">One nuance that shows depth</span>
+          <div>Stablecoins are <b>not legal tender</b> in Argentina — they are held and used by private agreement. Any messaging implying otherwise is both wrong and, after the ARGt action, regulatorily risky. Precision here is a feature.</div>
+        </div>
+      </div>
+    </div>
+    <div class="co say">
+      <span class="lab">Say this</span>
+      <q>Argentina is the one market where the regulatory door is opening rather than closing, and the banks walking through it are picking counterparties this year. Circle's BIND partnership is the right first move — the marketing job is to make sure the next ten Argentine institutions consider it the obvious one.</q>
+    </div>
+  </div>
+</section>
+
+<!-- PART 5 -->
+<section class="slide" data-part="05 · Footprint" data-title="What Circle has built">
+  <div class="wrap">
+    <div class="eye">05 · Circle's LATAM footprint today</div>
+    <h2 class="t">What exists, what it signals, and what's missing.</h2>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Partner</th><th>Market</th><th>What it is</th><th>What it signals</th></tr></thead>
+        <tbody>
+          <tr class="mk"><td class="k">Nubank</td><td>Brazil</td><td>Partnership to extend USDC access to Nubank customers; <b>200,000+ customers transacting</b> with USDC following launch</td><td class="hg">The single most valuable logo in LATAM fintech. Distribution to a base of well over 100 million</td></tr>
+          <tr><td class="k">BTG Pactual</td><td>Brazil</td><td>Digital asset products, near-instant 24/7 USDC access</td><td>Institutional and private-banking credibility — the wealth side of the market</td></tr>
+          <tr><td class="k">Matera</td><td>Brazil</td><td>USDC integrated into the Digital Twin core ledger, so banks can offer USDC alongside BRL and USD</td><td class="hg">Quietly the most strategic. Puts USDC <b>inside bank core systems</b> rather than beside them — among the first in the region to do that</td></tr>
+          <tr><td class="k">Grupo BIND</td><td>Argentina</td><td>Institutional USDC via the BEN digital asset platform</td><td>The institutional beachhead as banks are permitted back in</td></tr>
+          <tr><td class="k">Alfred Pay</td><td>Brazil, Mexico</td><td>CPN beneficiary institution; stablecoin-to-fiat off-ramps via <b>PIX and SPEI</b></td><td>The payout rail that makes CPN real in the region</td></tr>
+          <tr><td class="k">Circle Mint</td><td>Brazil, Mexico</td><td>Local-currency bank transfer via PIX and SPEI — minutes, no international wire</td><td>Removes the single biggest operational friction for regional treasurers</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="g2">
+      <div class="card b">
+        <span class="tag">Stated direction</span>
+        <ul class="t">
+          <li>Circle is <b>building a local team in Argentina</b> and hiring a senior director based in Buenos Aires.</li>
+          <li>Operating in Brazil, with stated expansion into <b>Mexico and Colombia</b>.</li>
+          <li>Actively seeking partnerships with banks, fintechs, exchanges and payment providers.</li>
+        </ul>
+      </div>
+      <div class="card o">
+        <span class="tag">The visible gaps — good material for questions</span>
+        <ul class="t">
+          <li><b>No Mercado Pago / Mercado Libre relationship</b> that I could find. That is the largest consumer fintech distribution surface in the region and the most conspicuous absence.</li>
+          <li><b>No obvious Bitso relationship</b> — the dominant LATAM exchange and remittance processor, now issuing its own MXNB.</li>
+          <li>Mexico presence looks thinner than Brazil's despite the corridor being the larger payments prize.</li>
+          <li>Colombia and Chile are stated targets with little visible in market yet.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PART 6 -->
+<section class="slide" data-part="06 · Strategy" data-title="Who you market to">
+  <div class="wrap">
+    <div class="eye">06 · The marketing strategy</div>
+    <h2 class="t">The audience isn't who most candidates will assume.</h2>
+    <p class="lede">Because Circle earns on balances held through institutions, <b>the buyer is an organisation, not a consumer.</b> A LATAM marketing plan built around retail awareness misreads the business — and that misread is probably the most common way candidates lose this interview.</p>
+    <div class="g3">
+      <div class="card g"><span class="tag">Segment 1 · Largest balances</span><h4>Banks and regulated financial institutions</h4><p><b>Who decides:</b> risk and compliance committee, treasurer, head of digital assets.<br><b>What they need:</b> attestations, licensing clarity, audit trail, BCB/CNV comfort, a name their board recognises.<br><b>The asset that moves them:</b> the Arc validator roster and the reserve attestations — not campaigns.</p></div>
+      <div class="card g"><span class="tag">Segment 2 · Fastest cycle</span><h4>Fintechs, PSPs and marketplaces</h4><p><b>Who decides:</b> CTO, head of payments, CFO.<br><b>What they need:</b> working docs, sandbox access, clear pricing, PIX/SPEI proof, a reference customer who looks like them.<br><b>The asset:</b> developer experience and case studies. This is the segment where content marketing genuinely converts.</p></div>
+      <div class="card g"><span class="tag">Segment 3 · Highest volume, lowest margin</span><h4>MTOs and remittance operators</h4><p><b>Who decides:</b> COO, head of corridors.<br><b>What they need:</b> corridor economics, settlement speed, liquidity depth, payout coverage.<br><b>The asset:</b> CPN partner network and hard corridor cost comparisons.</p></div>
+      <div class="card b"><span class="tag">Segment 4 · Builds the future pipeline</span><h4>Developers and startups</h4><p><b>Who decides:</b> the engineer, then the founder.<br><b>What they need:</b> SDKs, quickstarts, gas abstraction, hackathons, grants.<br><b>The asset:</b> developer marketing — the cheapest durable moat Circle can build in the region, and the one Tether has never seriously contested.</p></div>
+      <div class="card b"><span class="tag">Segment 5 · Force multiplier</span><h4>Regulators, policy and press</h4><p><b>Who decides:</b> not a buyer — a gatekeeper.<br><b>What they need:</b> a legible, cooperative issuer that helps them understand the category.<br><b>The asset:</b> policy engagement, research, and being the source LATAM journalists call. In a compliance-led sale, this <em>is</em> demand generation.</p></div>
+      <div class="card o"><span class="tag">Segment 6 · Deliberately deprioritised</span><h4>Retail consumers</h4><p>Reached through partners, never directly. Circle has no consumer app to acquire into, USDT owns the mindshare, and any direct-to-consumer spend competes with the partners you depend on. <b>Saying this clearly is a strength, not a gap.</b></p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-part="06 · Strategy" data-title="The channel plan">
+  <div class="wrap">
+    <div class="eye">06 · The marketing strategy</div>
+    <h2 class="t">What a regional marketing function should actually run.</h2>
+    <div class="g2">
+      <div class="stack">
+        <div class="card g">
+          <span class="tag">The spine</span>
+          <h4>Partner marketing, because partners are the distribution</h4>
+          <p>Circle's balances arrive through Nubank, BTG, Matera, BIND, Alfred. The highest-leverage marketing work is <b>co-marketing with them</b> — joint case studies, co-branded launches, their developer channels, their sales enablement.</p>
+          <p><b class="hg">One well-executed Nubank case study reaches more qualified LATAM buyers than a year of paid media.</b> And it costs a fraction.</p>
+        </div>
+        <div class="card b">
+          <span class="tag">The differentiator</span>
+          <h4>Compliance content as a marketing product</h4>
+          <p>In a market that just re-regulated, the most valuable thing you can publish is <b>a clear, accurate, Portuguese-language explanation of what BCB 519/520/521 means for a fintech's stablecoin operations</b> — and the Spanish equivalent for the CNV and BCRA changes.</p>
+          <p>Nobody markets compliance because it isn't glamorous. It is exactly what the buyer is searching for, it is uncontested, and it positions Circle as the adult in the category. This is the same insight that makes regulation the wedge.</p>
+        </div>
+        <div class="card b">
+          <span class="tag">The moat</span>
+          <h4>Developer marketing in Portuguese and Spanish</h4>
+          <ul class="t">
+            <li>Localised docs and quickstarts — most of the developer surface is English-first.</li>
+            <li>Hackathons and grants at Brazilian and Argentine universities and fintech communities.</li>
+            <li>Reference implementations for the two things every LATAM builder wants: <b>PIX-to-USDC</b> and <b>USDC-to-SPEI</b>.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="stack">
+        <div class="card">
+          <span class="tag">Events — where this audience actually is</span>
+          <ul class="t">
+            <li><b>Febraban Tech</b> (São Paulo) — the Brazilian banking industry's event. Where the risk committees are.</li>
+            <li><b>Money20/20</b> and regional fintech conferences.</li>
+            <li><b>Blockchain Rio</b>, <b>Labitconf</b> (Argentina) — the crypto-native audience.</li>
+            <li>Small, curated roundtables for heads of treasury and compliance beat large sponsorships for this buyer, and cost far less.</li>
+          </ul>
+          <p class="src">Verify the current-year calendar before naming specific events in the room.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Brand vs demand — the split I'd argue for</span>
+          <div class="kv">
+            <div><b>Brand</b><span>Category leadership on "regulated dollar infrastructure". Earned media, policy voice, research. Roughly a third of effort.</span></div>
+            <div><b>Demand</b><span>Partner co-marketing, content, developer programmes, field events, account-based work against a named list. Roughly half.</span></div>
+            <div><b>Enablement</b><span>Localised sales and partner materials, competitive briefs, objection handling. The rest — and the part that gets skipped and then blamed.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="co edge">
+      <span class="lab">The local-knowledge point that few candidates will make</span>
+      <div>Marketing to Brazilian financial institutions is <b>relationship and event-led, in Portuguese, with a long trust cycle</b>. Marketing to Argentine fintechs is faster, more informal, and more crypto-native. Treating LATAM as one audience with one calendar is the most common failure mode of regional marketing plans — and having run this before, you can say so with authority.</div>
+    </div>
+  </div>
+</section>
+<!-- PART 7 -->
+<section class="slide" data-part="07 · The plan" data-title="First 90 days">
+  <div class="wrap">
+    <div class="eye">07 · The plan</div>
+    <h2 class="t">First 90 days — nothing launches before it's instrumented.</h2>
+    <div class="g3">
+      <div class="card g">
+        <span class="tag">Days 1–30 · Learn and baseline</span>
+        <ul class="t">
+          <li>Map the org: who owns partnerships, sales, policy and product marketing globally, and where the regional line actually sits.</li>
+          <li>Understand how the function is measured today, and what global expects from LATAM.</li>
+          <li><b>Baseline the number that matters:</b> USDC balances originated through LATAM partners, by market and by partner.</li>
+          <li>Audit every asset for Portuguese and Spanish coverage. Expect most technical and compliance material to be English-only.</li>
+          <li>Talk to the partners — Nubank, BTG, Matera, BIND, Alfred — about what they actually need from Circle marketing. They are the distribution; ask them.</li>
+          <li>Resolve the open questions on slide 09 of this deck, starting with Circle's PSAV position in Brazil.</li>
+        </ul>
+      </div>
+      <div class="card g">
+        <span class="tag">Days 31–60 · Ship the cheapest high-leverage assets</span>
+        <ul class="t">
+          <li><b>The regulatory explainer, in pt-BR.</b> What BCB 519/520/521 means operationally for a fintech running stablecoin flows. Then the es-AR equivalent for the CNV and BCRA changes.</li>
+          <li><b>The first proof-point case study</b> with a named Brazilian partner and real numbers — settlement time, cost, volume.</li>
+          <li><b>Localised developer quickstarts</b> for PIX-to-USDC and USDC-to-SPEI.</li>
+          <li>Stand up partner co-marketing with one partner, properly, end to end — rather than five, badly.</li>
+          <li>A competitive brief the sales team can actually use, including honest USDT positioning.</li>
+        </ul>
+      </div>
+      <div class="card g">
+        <span class="tag">Days 61–90 · Build the engine</span>
+        <ul class="t">
+          <li>Named-account programme against the top 30 LATAM institutions, aligned with sales and partnerships.</li>
+          <li>First curated roundtable for heads of treasury and compliance in São Paulo.</li>
+          <li>Argentina beachhead plan, given banks are entering the market now.</li>
+          <li>A recurring regional reporting cadence, so the function is legible upward.</li>
+          <li>Developer programme v1 — docs, one hackathon, a grants path.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="co warn">
+      <span class="lab">What deliberately does not happen</span>
+      <div>No consumer brand campaign. No attempt to serve six markets at once. No large event sponsorship before there is a case study to put on the stand. And no messaging that positions USDC against sovereign money — in a market with an active CBDC programme in Drex and a central bank that just claimed jurisdiction, that framing is a liability rather than a growth strategy.</div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-part="07 · The plan" data-title="Measurement">
+  <div class="wrap">
+    <div class="eye">07 · The plan</div>
+    <h2 class="t">How this function should be measured — and the argument to have early.</h2>
+    <div class="g21">
+      <div class="stack">
+        <div class="card g">
+          <span class="tag">The metric that ladders to revenue</span>
+          <h4>USDC balances originated and retained through LATAM partners</h4>
+          <p>Everything else is a leading indicator of this. If marketing can't draw a line from its activity to regional balances, it will be treated as a cost centre in the first budget cycle — which is exactly what happens to regional marketing functions in reserve-income businesses.</p>
+        </div>
+        <div class="card b">
+          <span class="tag">The stack beneath it</span>
+          <div class="kv">
+            <div><b>Pipeline</b><span>Qualified institutional opportunities sourced by marketing, by market and segment</span></div>
+            <div><b>Partner</b><span>Partners live and transacting; balance contribution per partner; time from signature to first flow</span></div>
+            <div><b>Developer</b><span>Docs engagement, sandbox signups, apps reaching production, PIX/SPEI reference-implementation forks</span></div>
+            <div><b>Category</b><span>Share of voice against Tether in pt-BR and es media; inbound from regulators and press</span></div>
+            <div><b>Enablement</b><span>Localised asset coverage; sales-team usage of competitive and compliance material</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="stack">
+        <div class="co edge">
+          <span class="lab">The argument to make in month one</span>
+          <div>Institutional sales cycles in LATAM banking run six to eighteen months. A marketing function judged on quarterly pipeline will optimise for the wrong things — noisy events and volume leads — and starve the compliance content and partner work that actually converts. <b>Push for balance contribution measured on twelve-month cohorts, with pipeline as a leading indicator rather than the target.</b> That decision gets made early or it gets made against you.</div>
+        </div>
+        <div class="co say">
+          <span class="lab">Say this</span>
+          <q>The thing I'd want agreed in month one is the measurement window. If we're judged on quarterly MQLs I'll produce quarterly MQLs, and none of them will be a Brazilian bank — because that decision takes a year. Measure me on balances originated through partners over twelve-month cohorts and I'll build something that compounds.</q>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PART 8 -->
+<section class="slide" data-part="08 · Interview kit" data-title="Questions to ask">
+  <div class="wrap">
+    <div class="eye">08 · Interview kit</div>
+    <h2 class="t">Questions to ask, ordered by signal.</h2>
+    <div class="g2">
+      <div class="steps">
+        <div class="step"><span class="no">01</span><div><h4>"Is this role measured on USDC balances originated in the region, or on pipeline for CPN? Those imply different functions."</h4><p>The single most revealing question. It tells you whether the mandate is defined or you'd be inventing it.</p></div></div>
+        <div class="step"><span class="no">02</span><div><h4>"Does Circle hold a PSAV authorisation in Brazil, and how are the partners licensed post-February?"</h4><p>Shows you understand what actually gates the business after the BCB resolutions. Very few candidates will ask this.</p></div></div>
+        <div class="step"><span class="no">03</span><div><h4>"How does the regional marketing line sit against global product marketing and the partnerships team?"</h4><p>Regional marketing roles die in the seams. Find out whether the boundaries are drawn.</p></div></div>
+        <div class="step"><span class="no">04</span><div><h4>"With Arc mainnet on 16 September, what's LATAM's role in that launch?"</h4><p>It lands a month after you'd start. Asking positions you as current and surfaces whether you'd inherit a launch.</p></div></div>
+        <div class="step"><span class="no">05</span><div><h4>"USDT is around ninety percent of volume in Brazil. What's the internal view on where Circle realistically wins?"</h4><p>Ask with curiosity, not challenge. A crisp answer is a good sign; no answer tells you the strategy is unformed.</p></div></div>
+      </div>
+      <div class="steps">
+        <div class="step"><span class="no">06</span><div><h4>"Is Mercado Pago a live conversation? It's the most conspicuous absence in the partner map."</h4><p>Demonstrates you audited the footprint rather than reading the press page.</p></div></div>
+        <div class="step"><span class="no">07</span><div><h4>"How do you think about local-currency stablecoins — MXNB and the BRL-pegged issuers — as complement or competition?"</h4><p>The most strategically sophisticated question on this list.</p></div></div>
+        <div class="step"><span class="no">08</span><div><h4>"What does the LATAM team look like today, and what would I be building?"</h4><p>Practical. Also tells you whether it's a first hire or a rebuild.</p></div></div>
+        <div class="step"><span class="no">09</span><div><h4>"How much budget authority does the role carry, and is it regionally controlled or drawn from global?"</h4><p>Ask plainly. The answer determines whether the job is strategy or execution.</p></div></div>
+        <div class="step"><span class="no">10</span><div><h4>"What does success look like at six months?"</h4><p>Always. Listen for whether the answer is a metric or an activity.</p></div></div>
+      </div>
+    </div>
+    <div class="co warn">
+      <span class="lab">One to handle with judgement</span>
+      <div>The <b>Coinbase revenue-share agreement is up for renewal this month</b>. It is genuinely material — it determines roughly what share of reserve income Circle keeps. But it is also commercially sensitive and above this role's line. If you raise it, raise it as context rather than as an ask: <em>"I read the distribution agreement is up this year — does that change how much the company values regionally-originated balances?"</em> That's the version that makes you sound commercially literate rather than nosy.</div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-part="08 · Interview kit" data-title="Objections and risks">
+  <div class="wrap">
+    <div class="eye">08 · Interview kit</div>
+    <h2 class="t">What they'll push on, and the honest answers.</h2>
+    <div class="g2">
+      <div class="stack">
+        <div class="card o">
+          <span class="tag">"You don't have crypto or stablecoin marketing experience"</span>
+          <p>Probably the hardest one. The answer isn't to overclaim — it's that you've launched a regulated financial product into LATAM from zero, which is the same machine: partner-led distribution, compliance-gated adoption, market-by-market localisation, and a category most consumers didn't understand yet. <b>Crypto.com was a licensed financial product in six markets, not a meme.</b> The vertical differs; the mechanics don't.</p>
+        </div>
+        <div class="card o">
+          <span class="tag">"This is B2B institutional marketing. Your background looks consumer."</span>
+          <p>Fair, and worth conceding cleanly before pivoting. The bridge: partner-led growth <em>is</em> B2B — you sold Crypto.com into banks, PSPs and regulators to get the consumer product live at all. If you have any named institutional relationships or partner-marketing work, this is where they belong.</p>
+        </div>
+        <div class="card o">
+          <span class="tag">"How would you win against Tether?"</span>
+          <p>Covered on slide 15. Do not claim you'd take retail share. Reframe to the regulated layer, and name the segment where a marketing budget can actually move the number.</p>
+        </div>
+      </div>
+      <div class="stack">
+        <div class="card o">
+          <span class="tag">"What would you do in your first 90 days?"</span>
+          <p>Part 07. Lead with <b>instrument and baseline</b>, then the pt-BR regulatory explainer as the first shipped asset — it's cheap, uncontested, and immediately useful to every partner. Naming a concrete first deliverable beats describing a process.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Risks to have thought about</span>
+          <ul class="t">
+            <li><b>Rate sensitivity</b> — falling rates compress revenue on flat balances, which pressures every budget including yours.</li>
+            <li><b>Distribution economics</b> — the Coinbase renewal.</li>
+            <li><b>Regulatory reversal</b> — Brazil could tighten further; the IOF-Câmbio treatment already adds cost to every stablecoin FX transaction.</li>
+            <li><b>Drex</b> — Brazil's CBDC programme has been slow and uneven, but a successful sovereign rail would change the domestic case materially.</li>
+            <li><b>Channel conflict</b> — MoneyGram and Global Payments as Arc validators versus MTO partners.</li>
+            <li><b>Tether's balance sheet</b> — it can buy distribution Circle would have to earn.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-part="08 · Interview kit" data-title="Lines and open items">
+  <div class="wrap">
+    <div class="eye">08 · Interview kit</div>
+    <h2 class="t">Eight lines to have ready — and the five things to verify first.</h2>
+    <div class="g21">
+      <div class="steps">
+        <div class="step"><span class="no">01</span><div><p>"Circle monetises balances, not transactions. Onchain volume grew a hundred and fifty-one percent last quarter and revenue grew seven — that gap is the whole strategic story."</p></div></div>
+        <div class="step"><span class="no">02</span><div><p>"Tether won the savings account in LATAM. That fight is over. The treasury and the payout rail are not."</p></div></div>
+        <div class="step"><span class="no">03</span><div><p>"February reclassified stablecoins as foreign exchange in Brazil. Choosing an issuer became a compliance decision instead of a liquidity one — and that's a decision Circle should win."</p></div></div>
+        <div class="step"><span class="no">04</span><div><p>"In LATAM, stablecoins aren't a crypto product. They're a dollar-access product on crypto rails, and most users don't consider themselves crypto users. Market the problem, not the technology."</p></div></div>
+        <div class="step"><span class="no">05</span><div><p>"A Mexican family can already receive money over WhatsApp on a USDC rail for under one percent. The rail isn't the question — whose dollar rides it is."</p></div></div>
+        <div class="step"><span class="no">06</span><div><p>"BlackRock, Visa, Mastercard and DTCC running validators does more with a Brazilian risk committee than any campaign I could buy."</p></div></div>
+        <div class="step"><span class="no">07</span><div><p>"The threat I'd watch isn't Tether — it's local-currency stablecoins. If BRL settles to MXNB directly, we're not in the transaction at all."</p></div></div>
+        <div class="step"><span class="no">08</span><div><p>"I've built exactly this machine in this region — a regulated financial product from zero across LATAM, partner by partner. The vertical is new to me; the mechanics aren't."</p></div></div>
+      </div>
+      <div class="stack">
+        <div class="card o">
+          <span class="tag">Verify before the interview</span>
+          <div class="kv">
+            <div><b>The JD</b><span>Circle's careers site was blocked from here, so I could not read the actual posting. <b>Read it before you go in</b> — everything in Part 06 and 07 should be re-pointed at whatever it actually asks for.</span></div>
+            <div><b>PSAV status</b><span>Whether Circle holds or is pursuing Brazilian authorisation post-February.</span></div>
+            <div><b>Reporting line</b><span>Who this role reports to, and whether LATAM leadership exists above it.</span></div>
+            <div><b>Coinbase renewal</b><span>Whether it concluded this month, and on what terms if disclosed.</span></div>
+            <div><b>Arc launch</b><span>Confirm 16 September is holding, and whether any LATAM partner is in the launch cohort.</span></div>
+          </div>
+        </div>
+        <div class="co say">
+          <span class="lab">If you say nothing else well, say this</span>
+          <q>Circle's LATAM problem isn't awareness — it's that the buyer who matters just changed. Until February, choosing a stablecoin was a liquidity decision and Tether won it. Now it's a compliance decision made by a risk committee, and that's a different sale, a different audience and a different marketing function. I'd build for the buyer that exists after February, not the one that existed before it.</q>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="idx" id="index" role="dialog" aria-label="Slide index" aria-modal="true">
+  <div class="idx-h"><div class="eye">Index</div><h3 class="t">Jump to any slide</h3></div>
+  <div id="idxBody"></div>
+</div>
+
+<nav class="bar">
+  <div class="tt" id="barTitle"></div>
+  <div class="ng">
+    <span class="hint">← → navigate · I index · P print</span>
+    <button class="nb" id="prev" type="button" aria-label="Previous slide">←</button>
+    <button class="nb" id="next" type="button" aria-label="Next slide">→</button>
+  </div>
+</nav>
+
+<script>
+(function(){
+  var s=[].slice.call(document.querySelectorAll('.slide')),T=s.length,c=0;
+  var C=document.getElementById('count'),P=document.getElementById('prog'),B=document.getElementById('barTitle'),
+      pv=document.getElementById('prev'),nx=document.getElementById('next'),ix=document.getElementById('index'),
+      ib=document.getElementById('idxBody'),ibt=document.getElementById('idxBtn'),tb=document.getElementById('themeBtn');
+  function pad(n){return (n<10?'0':'')+n}
+  function show(i,push){
+    i=Math.max(0,Math.min(T-1,i)); s[c].classList.remove('on'); c=i; s[c].classList.add('on');
+    window.scrollTo(0,0);
+    C.textContent=pad(c+1)+' / '+pad(T); P.style.width=(((c+1)/T)*100)+'%';
+    B.textContent=(s[c].dataset.part||'')+' — '+(s[c].dataset.title||'');
+    pv.disabled=(c===0); nx.disabled=(c===T-1);
+    if(push!==false) history.replaceState(null,'','#s'+(c+1));
+  }
+  var groups=[],last=null;
+  s.forEach(function(el,i){
+    var p=el.dataset.part||'Slides';
+    if(!last||last.part!==p){last={part:p,items:[]};groups.push(last)}
+    last.items.push({i:i,title:el.dataset.title||('Slide '+(i+1))});
+  });
+  groups.forEach(function(g){
+    var w=document.createElement('div');w.className='ip';
+    var h=document.createElement('h4');h.textContent=g.part;w.appendChild(h);
+    var gr=document.createElement('div');gr.className='ig';
+    g.items.forEach(function(it){
+      var b=document.createElement('button');b.type='button';b.className='ii';
+      b.innerHTML='<span class="n">'+pad(it.i+1)+'</span><span class="x"></span>';
+      b.querySelector('.x').textContent=it.title;
+      b.addEventListener('click',function(){cl();show(it.i)});
+      gr.appendChild(b);
+    });
+    w.appendChild(gr);ib.appendChild(w);
+  });
+  function op(){ix.classList.add('on');ibt.textContent='Close'}
+  function cl(){ix.classList.remove('on');ibt.textContent='Index'}
+  function tg(){ix.classList.contains('on')?cl():op()}
+  ibt.addEventListener('click',tg);
+  pv.addEventListener('click',function(){show(c-1)});
+  nx.addEventListener('click',function(){show(c+1)});
+  var order=['','light','dark'];
+  tb.addEventListener('click',function(){
+    var now=document.documentElement.getAttribute('data-theme')||'';
+    var nt=order[(order.indexOf(now)+1)%order.length];
+    if(nt) document.documentElement.setAttribute('data-theme',nt);
+    else document.documentElement.removeAttribute('data-theme');
+    tb.textContent=nt?nt.charAt(0).toUpperCase()+nt.slice(1):'Theme';
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.metaKey||e.ctrlKey||e.altKey)return;
+    var t=(e.target.tagName||'').toLowerCase(); if(t==='input'||t==='textarea')return;
+    if(e.key==='Escape'){cl();return}
+    if(ix.classList.contains('on')&&e.key!=='i'&&e.key!=='I')return;
+    switch(e.key){
+      case 'ArrowRight': case 'PageDown': case ' ': e.preventDefault();show(c+1);break;
+      case 'ArrowLeft': case 'PageUp': e.preventDefault();show(c-1);break;
+      case 'Home': e.preventDefault();show(0);break;
+      case 'End': e.preventDefault();show(T-1);break;
+      case 'i': case 'I': e.preventDefault();tg();break;
+      case 'p': case 'P': e.preventDefault();window.print();break;
+    }
+  });
+  var x0=null,y0=null;
+  document.addEventListener('touchstart',function(e){x0=e.changedTouches[0].clientX;y0=e.changedTouches[0].clientY},{passive:true});
+  document.addEventListener('touchend',function(e){
+    if(x0===null)return;
+    var dx=e.changedTouches[0].clientX-x0,dy=e.changedTouches[0].clientY-y0;
+    if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)*1.6)show(c+(dx<0?1:-1));
+    x0=null;y0=null;
+  },{passive:true});
+  var m=/^#s(\d+)$/.exec(location.hash||'');
+  show(m?(parseInt(m[1],10)-1):0,false);
+})();
+</script>
